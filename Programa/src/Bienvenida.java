@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
-
+//import java.io.*;//Inportamos la libreria para trabajar con ficheros.
+//import java.util.Objects;
+//import java.util.Scanner;//Inportamos la libreria scanner para utilizar entrada de datos por teclado.
 public class Bienvenida extends JFrame implements ActionListener{
 
   private JTextField textfield1;
@@ -38,7 +40,7 @@ public class Bienvenida extends JFrame implements ActionListener{
     label3.setForeground(new Color(0, 0, 0));
     add(label3);
 
-    label4 = new JLabel("©2017 Aura Boutique Company");
+    label4 = new JLabel("ï¿½2017 Aura Boutique Company");
     label4.setBounds(400,375,300,30);
     label4.setFont(new Font("Andale Mono", 1, 12));
     label4.setForeground(new Color(0, 0, 0));
@@ -58,9 +60,10 @@ public class Bienvenida extends JFrame implements ActionListener{
     boton1.setForeground(new Color(255,0,0));
     boton1.addActionListener(this);
     add(boton1);
-
-
-    ImageIcon imagen = new ImageIcon("C:/Users/Dell/Desktop/JAVA/PRUEBA_P1/src/images/boutique2.png");
+    String imagen1="boutique1.png";
+    
+    System.out.println(busquedad(imagen1));
+    ImageIcon imagen = new ImageIcon(imagen1);
     label1 = new JLabel(imagen);
     label1.setBounds(0,0,350,450);
     add(label1);
@@ -73,6 +76,13 @@ public class Bienvenida extends JFrame implements ActionListener{
        
      }
    }
+   public String busquedad (String datos) {
+    String separador = System.getProperty("file.separator");
+    String escritorio = System.getProperty("desktop");
+    String rutafichero = System.getProperty("user.home") + separador+escritorio+separador+datos; // Creamos la variable donde guardamos la ruta del fichero.
+    return rutafichero;
+}
+
 
    public static void main(String args[]){
      Bienvenida ventanabienvenida = new Bienvenida();
