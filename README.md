@@ -1,4 +1,4 @@
-# proyeco1
+# Proyeco1
 
 public class Main {
 
