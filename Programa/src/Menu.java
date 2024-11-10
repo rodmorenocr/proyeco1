@@ -6,6 +6,8 @@ public class Menu extends javax.swing.JDialog {
     public Menu(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setLocationRelativeTo(null);
+        this.setTitle("Menú principal");
     }
 
     /**
