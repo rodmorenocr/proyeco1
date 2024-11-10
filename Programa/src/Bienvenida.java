@@ -60,7 +60,7 @@ public class Bienvenida extends JFrame implements ActionListener{
     boton1.setForeground(new Color(255,0,0));
     boton1.addActionListener(this);
     add(boton1);
-    String imagen1="boutique1.png";
+    String imagen1="boutique1.png";       
     
     System.out.println(busquedad(imagen1));
     ImageIcon imagen = new ImageIcon(imagen1);
@@ -73,9 +73,13 @@ public class Bienvenida extends JFrame implements ActionListener{
 
    public void actionPerformed(ActionEvent e){
      if(e.getSource() == boton1){
-       
+      Menu menu = new Menu(this, true);
+      menu.setVisible(true);  
      }
+
    }
+
+   
    public String busquedad (String datos) {
     String separador = System.getProperty("file.separator");
     String escritorio = System.getProperty("desktop");
