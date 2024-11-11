@@ -1,6 +1,6 @@
 public class Bienvenido extends javax.swing.JFrame {
 
-    /**
+    /** //test para commit JLP
      * Creates new form Bienvenido
      */
     public Bienvenido() {
