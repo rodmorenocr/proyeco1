@@ -1,9 +1,9 @@
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
-//import java.io.*;//Inportamos la libreria para trabajar con ficheros.
+//import java.io.*;//Importamos la libreria para trabajar con ficheros.
 //import java.util.Objects;
-//import java.util.Scanner;//Inportamos la libreria scanner para utilizar entrada de datos por teclado.
+//import java.util.Scanner;//Importamos la libreria scanner para utilizar entrada de datos por teclado.
 public class Bienvenida extends JFrame implements ActionListener{
 
   private JTextField textfield1;
