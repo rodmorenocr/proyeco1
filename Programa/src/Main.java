@@ -1,6 +1,6 @@
 public class Main {
-
+    public static void main(String[] args) {
     Bienvenido bienvenida = new Bienvenido();
-    bienvenido.setVisible(true);
-
+    bienvenida.setVisible(true);
+    }
 }
