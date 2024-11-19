@@ -522,7 +522,15 @@ public class Menu extends javax.swing.JDialog {
     }                                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        // Nominas
+        Menu.getOwnerlessWindows();
+        Nominas nominaApp = new Nominas((java.awt.Frame) null, true);
+         nominaApp.show();
+
+
+
+
+
     }                                        
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         

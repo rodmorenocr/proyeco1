@@ -1,3 +1,6 @@
+import javax.swing.SwingUtilities;
+
+ import javax.swing.SwingWorker;
 public class Bienvenido extends javax.swing.JFrame {
 
     /** //test para commit JLP
@@ -144,9 +147,16 @@ public class Bienvenido extends javax.swing.JFrame {
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {                                                
         //String nombre = jTextFieldNombre.getText();
        // String password = jTextFieldPassword.getText();
-        Menu menu = new Menu(this, true);
-        menu.setVisible(true);
-    }                                               
+      
+    
+        // Crear e invocar la interfaz de Menu en el hilo de despacho de eventos
+        
+             Menu menu = new Menu((java.awt.Frame) null, true);
+              menu.setVisible(true);
+
+    }
+    
+                                                   
 
     private void jButtonSALIRActionPerformed(java.awt.event.ActionEvent evt) {                                             
         System.exit(0);
