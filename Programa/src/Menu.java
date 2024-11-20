@@ -482,50 +482,50 @@ public class Menu extends javax.swing.JDialog {
     }// </editor-fold>                        
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
+        
     }                                           
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        
     }                                        
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        
     }                                        
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        
     }                                        
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        
     }                                        
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        
     }                                        
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        
     }                                        
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
+        
     }                                         
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
+        
     }                                         
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        
     }                                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // Nominas
         Menu.getOwnerlessWindows();
         Nominas nominaApp = new Nominas((java.awt.Frame) null, true);
-         nominaApp.show();
+         nominaApp.setVisible(true);
 
 
 
@@ -534,32 +534,32 @@ public class Menu extends javax.swing.JDialog {
     }                                        
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        
     }                                        
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
+        
     }                                         
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
+        
     }                                         
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
+        
     }                                         
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
+        
     }                                         
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
+        
     }                                         
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {                                          
         setVisible(false);
-        dispose();        // TODO add your handling code here:
+        dispose();        
     }                                         
 
     /**

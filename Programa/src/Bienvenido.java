@@ -1,6 +1,4 @@
-import javax.swing.SwingUtilities;
 
- import javax.swing.SwingWorker;
 public class Bienvenido extends javax.swing.JFrame {
 
     /** //test para commit JLP
