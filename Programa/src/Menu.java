@@ -523,15 +523,38 @@ public class Menu extends javax.swing.JDialog {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // Nominas
-        Menu.getOwnerlessWindows();
-        Nominas nominaApp = new Nominas((java.awt.Frame) null, true);
-         nominaApp.setVisible(true);
+        
+        //Nominas nominaApp = new Nominas((java.awt.Frame) null, true);
+         //nominaApp.setVisible(true);
+         try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Nominas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Nominas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Nominas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Nominas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+                
+                Nominas NominaINT = new Nominas((java.awt.Frame) null, true);
+                NominaINT.setVisible(true);
+            
+    }
 
 
 
 
-
-    }                                        
+                                           
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         
