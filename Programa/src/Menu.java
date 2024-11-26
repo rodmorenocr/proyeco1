@@ -524,7 +524,7 @@ public class Menu extends javax.swing.JDialog {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // Nominas
         
-        Nominas nominaApp = new Nominas((java.awt.Frame) null, false);
+        Nominas nominaApp = new Nominas((java.awt.Frame) null, true);
          nominaApp.setVisible(true);
             
     }

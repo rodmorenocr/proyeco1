@@ -149,7 +149,7 @@ public class Bienvenido extends javax.swing.JFrame {
     
         // Crear e invocar la interfaz de Menu en el hilo de despacho de eventos
         
-             Menu menu = new Menu((java.awt.Frame) null, false);
+             Menu menu = new Menu( this, false);
               menu.setVisible(true);
 
     }
