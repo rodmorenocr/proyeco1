@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package GUI;
+
+import Programa.src.Email;
+import Programa.src.Menu;
 
 /**
  *
@@ -15,6 +13,7 @@ public class UserProfile extends javax.swing.JFrame {
      */
     public UserProfile() {
         initComponents();
+        this.setTitle("UserProfile");
     }
 
     /**
@@ -60,6 +59,7 @@ public class UserProfile extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
             Email dpe = new Email();  
             dpe.setVisible(true);
+
     }                                        
 
     /**
