@@ -1,4 +1,4 @@
-# Proyeco1
+# Proyecto1
 
 public class Main {
 
