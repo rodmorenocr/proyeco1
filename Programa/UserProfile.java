@@ -1,11 +1,4 @@
 
-import Programa.src.Email;
-import Programa.src.Menu;
-
-/**
- *
- * @author 0ENNO
- */
 public class UserProfile extends javax.swing.JFrame {
 
     /**
@@ -13,6 +6,7 @@ public class UserProfile extends javax.swing.JFrame {
      */
     public UserProfile() {
         initComponents();
+        setLocationRelativeTo(null);
         this.setTitle("UserProfile");
     }
 
@@ -25,42 +19,306 @@ public class UserProfile extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        CabezaOrg = new javax.swing.JLabel();
+        Org1 = new javax.swing.JLabel();
+        Org2 = new javax.swing.JLabel();
+        Org3 = new javax.swing.JLabel();
+        Org4 = new javax.swing.JLabel();
+        PaisEdit = new javax.swing.JTextField();
+        ProvinciaEdit = new javax.swing.JTextField();
+        CuidadEdit = new javax.swing.JTextField();
+        CodPostalEdit = new javax.swing.JTextField();
+        DireccionEdit = new javax.swing.JTextField();
+        TelefonoEdit = new javax.swing.JTextField();
+        PuestoEdit = new javax.swing.JTextField();
+        MailEdit = new javax.swing.JTextField();
+        ApellidoEdit = new javax.swing.JTextField();
+        NombreEdit = new javax.swing.JTextField();
+        País = new javax.swing.JLabel();
+        Guardar = new javax.swing.JButton();
+        Cancelar = new javax.swing.JButton();
+        Provincia = new javax.swing.JLabel();
+        Ciudad = new javax.swing.JLabel();
+        Postal = new javax.swing.JLabel();
+        Dirección = new javax.swing.JLabel();
+        Telefono = new javax.swing.JLabel();
+        Apellido = new javax.swing.JLabel();
+        Puesto = new javax.swing.JLabel();
+        Mail = new javax.swing.JLabel();
+        Nombre2 = new javax.swing.JLabel();
+        Foto = new javax.swing.JLabel();
+        Nombre = new javax.swing.JLabel();
+        InicioButton = new javax.swing.JButton();
+        MisNóminas = new javax.swing.JButton();
+        MailButton1 = new javax.swing.JButton();
+        Vacaciones = new javax.swing.JButton();
+        Intranet = new javax.swing.JButton();
+        Favoritos1 = new javax.swing.JButton();
+        BarraBusqueda = new javax.swing.JTextField();
+        Empleo2 = new javax.swing.JLabel();
+        Empleo1 = new javax.swing.JLabel();
+        Empleo = new javax.swing.JLabel();
+        SobreNosotros = new javax.swing.JLabel();
+        Tittle = new javax.swing.JLabel();
+        UserProfileBackGround = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1042, 553));
+        setUndecorated(true);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        CabezaOrg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/auraboutique/images/tia3.png"))); // NOI18N
+        getContentPane().add(CabezaOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, 40, 40));
+
+        Org1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/auraboutique/images/tio1.png"))); // NOI18N
+        getContentPane().add(Org1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 260, 40, 40));
+
+        Org2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/auraboutique/images/tio2.png"))); // NOI18N
+        getContentPane().add(Org2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 40, 40));
+
+        Org3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/auraboutique/images/tia4.png"))); // NOI18N
+        getContentPane().add(Org3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 260, 40, 40));
+
+        Org4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/auraboutique/images/tia2.png"))); // NOI18N
+        getContentPane().add(Org4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 180, 50, 50));
+
+        PaisEdit.setBackground(new java.awt.Color(255, 255, 255));
+        PaisEdit.setForeground(new java.awt.Color(0, 0, 0));
+        PaisEdit.setText("España");
+        PaisEdit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(PaisEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, 140, -1));
+
+        ProvinciaEdit.setBackground(new java.awt.Color(255, 255, 255));
+        ProvinciaEdit.setForeground(new java.awt.Color(0, 0, 0));
+        ProvinciaEdit.setText("Madrid");
+        ProvinciaEdit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(ProvinciaEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, 160, -1));
+
+        CuidadEdit.setBackground(new java.awt.Color(255, 255, 255));
+        CuidadEdit.setForeground(new java.awt.Color(0, 0, 0));
+        CuidadEdit.setText("Madrid");
+        CuidadEdit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(CuidadEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 140, -1));
+
+        CodPostalEdit.setBackground(new java.awt.Color(255, 255, 255));
+        CodPostalEdit.setForeground(new java.awt.Color(0, 0, 0));
+        CodPostalEdit.setText("28123");
+        CodPostalEdit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(CodPostalEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 160, -1));
+
+        DireccionEdit.setBackground(new java.awt.Color(255, 255, 255));
+        DireccionEdit.setForeground(new java.awt.Color(0, 0, 0));
+        DireccionEdit.setText("Calle Valparaiso ");
+        DireccionEdit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(DireccionEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, 140, -1));
+
+        TelefonoEdit.setBackground(new java.awt.Color(255, 255, 255));
+        TelefonoEdit.setForeground(new java.awt.Color(0, 0, 0));
+        TelefonoEdit.setText("+34000000000");
+        TelefonoEdit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        TelefonoEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                TelefonoEditActionPerformed(evt);
             }
         });
+        getContentPane().add(TelefonoEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 160, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jButton1)
-                .addContainerGap(558, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jButton1)
-                .addContainerGap(366, Short.MAX_VALUE))
-        );
+        PuestoEdit.setBackground(new java.awt.Color(255, 255, 255));
+        PuestoEdit.setForeground(new java.awt.Color(0, 0, 0));
+        PuestoEdit.setText("Manager Ventas");
+        PuestoEdit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(PuestoEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 140, -1));
+
+        MailEdit.setBackground(new java.awt.Color(255, 255, 255));
+        MailEdit.setForeground(new java.awt.Color(0, 0, 0));
+        MailEdit.setText("eva.lopez@auraboutique.es");
+        MailEdit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(MailEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 160, -1));
+
+        ApellidoEdit.setBackground(new java.awt.Color(255, 255, 255));
+        ApellidoEdit.setForeground(new java.awt.Color(0, 0, 0));
+        ApellidoEdit.setText("García López");
+        ApellidoEdit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(ApellidoEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 140, -1));
+
+        NombreEdit.setBackground(new java.awt.Color(255, 255, 255));
+        NombreEdit.setForeground(new java.awt.Color(0, 0, 0));
+        NombreEdit.setText("Eva");
+        NombreEdit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        NombreEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreEditActionPerformed(evt);
+            }
+        });
+        getContentPane().add(NombreEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 160, -1));
+
+        País.setForeground(new java.awt.Color(0, 0, 0));
+        País.setText("País");
+        getContentPane().add(País, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, 90, 20));
+
+        Guardar.setText("Guardar");
+        getContentPane().add(Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, -1, -1));
+
+        Cancelar.setText("Cancelar");
+        getContentPane().add(Cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 490, -1, -1));
+
+        Provincia.setForeground(new java.awt.Color(0, 0, 0));
+        Provincia.setText("Provincia");
+        getContentPane().add(Provincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 410, 90, 20));
+
+        Ciudad.setForeground(new java.awt.Color(0, 0, 0));
+        Ciudad.setText("Ciudad");
+        getContentPane().add(Ciudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 90, 20));
+
+        Postal.setForeground(new java.awt.Color(0, 0, 0));
+        Postal.setText("Código Postal");
+        getContentPane().add(Postal, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 90, 20));
+
+        Dirección.setForeground(new java.awt.Color(0, 0, 0));
+        Dirección.setText("Dirección");
+        getContentPane().add(Dirección, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 60, 20));
+
+        Telefono.setForeground(new java.awt.Color(0, 0, 0));
+        Telefono.setText("Teléfono");
+        getContentPane().add(Telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 60, 20));
+
+        Apellido.setForeground(new java.awt.Color(0, 0, 0));
+        Apellido.setText("Apellido");
+        getContentPane().add(Apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 60, 20));
+
+        Puesto.setForeground(new java.awt.Color(0, 0, 0));
+        Puesto.setText("Puesto");
+        getContentPane().add(Puesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 60, 20));
+
+        Mail.setForeground(new java.awt.Color(0, 0, 0));
+        Mail.setText("Mail");
+        getContentPane().add(Mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 60, 20));
+
+        Nombre2.setForeground(new java.awt.Color(0, 0, 0));
+        Nombre2.setText("Nombre");
+        getContentPane().add(Nombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 60, 20));
+
+        Foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/auraboutique/images/tia2.png"))); // NOI18N
+        Foto.setText("jLabel1");
+        Foto.setPreferredSize(new java.awt.Dimension(150, 70));
+        getContentPane().add(Foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 110, 100));
+
+        Nombre.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        Nombre.setForeground(new java.awt.Color(0, 0, 0));
+        Nombre.setText("Eva García López");
+        getContentPane().add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 170, 40));
+
+        InicioButton.setText("Inicio");
+        InicioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InicioButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(InicioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 110, -1));
+
+        MisNóminas.setText("Vacaciones");
+        MisNóminas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MisNóminasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(MisNóminas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 110, -1));
+
+        MailButton1.setText("Email");
+        getContentPane().add(MailButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 110, -1));
+
+        Vacaciones.setText("Mis Nóminas");
+        Vacaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VacacionesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Vacaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 110, -1));
+
+        Intranet.setText("Intranet");
+        Intranet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IntranetActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Intranet, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 110, -1));
+
+        Favoritos1.setText("Favoritos");
+        Favoritos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Favoritos1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Favoritos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 110, -1));
+
+        BarraBusqueda.setBackground(new java.awt.Color(255, 255, 255));
+        BarraBusqueda.setText("Buscador");
+        BarraBusqueda.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BarraBusqueda.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        getContentPane().add(BarraBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 240, -1));
+
+        Empleo2.setText("Contacto");
+        Empleo2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(Empleo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 70, 20));
+
+        Empleo1.setText("Ubicación");
+        Empleo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(Empleo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 70, 20));
+
+        Empleo.setText("Empleo");
+        Empleo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(Empleo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 50, 20));
+
+        SobreNosotros.setText("¿Sobre Nosostros?");
+        SobreNosotros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(SobreNosotros, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 110, 20));
+
+        Tittle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Tittle.setText("Aura Boutique");
+        Tittle.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(Tittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 140, 30));
+
+        UserProfileBackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/auraboutique/images/Diapositiva1.png"))); // NOI18N
+        UserProfileBackGround.setMaximumSize(new java.awt.Dimension(1702, 955));
+        UserProfileBackGround.setMinimumSize(new java.awt.Dimension(1042, 553));
+        getContentPane().add(UserProfileBackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 0, 990, -1));
+
+        jTextField1.setText("jTextField1");
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>                        
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-            Email dpe = new Email();  
-            dpe.setVisible(true);
+    private void InicioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
 
+    private void MisNóminasActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void IntranetActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
     }                                        
+
+    private void Favoritos1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void VacacionesActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void NombreEditActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void TelefonoEditActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
 
     /**
      * @param args the command line arguments
@@ -98,6 +356,48 @@ public class UserProfile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel Apellido;
+    private javax.swing.JTextField ApellidoEdit;
+    private javax.swing.JTextField BarraBusqueda;
+    private javax.swing.JLabel CabezaOrg;
+    private javax.swing.JButton Cancelar;
+    private javax.swing.JLabel Ciudad;
+    private javax.swing.JTextField CodPostalEdit;
+    private javax.swing.JTextField CuidadEdit;
+    private javax.swing.JTextField DireccionEdit;
+    private javax.swing.JLabel Dirección;
+    private javax.swing.JLabel Empleo;
+    private javax.swing.JLabel Empleo1;
+    private javax.swing.JLabel Empleo2;
+    private javax.swing.JButton Favoritos1;
+    private javax.swing.JLabel Foto;
+    private javax.swing.JButton Guardar;
+    private javax.swing.JButton InicioButton;
+    private javax.swing.JButton Intranet;
+    private javax.swing.JLabel Mail;
+    private javax.swing.JButton MailButton1;
+    private javax.swing.JTextField MailEdit;
+    private javax.swing.JButton MisNóminas;
+    private javax.swing.JLabel Nombre;
+    private javax.swing.JLabel Nombre2;
+    private javax.swing.JTextField NombreEdit;
+    private javax.swing.JLabel Org1;
+    private javax.swing.JLabel Org2;
+    private javax.swing.JLabel Org3;
+    private javax.swing.JLabel Org4;
+    private javax.swing.JTextField PaisEdit;
+    private javax.swing.JLabel País;
+    private javax.swing.JLabel Postal;
+    private javax.swing.JLabel Provincia;
+    private javax.swing.JTextField ProvinciaEdit;
+    private javax.swing.JLabel Puesto;
+    private javax.swing.JTextField PuestoEdit;
+    private javax.swing.JLabel SobreNosotros;
+    private javax.swing.JLabel Telefono;
+    private javax.swing.JTextField TelefonoEdit;
+    private javax.swing.JLabel Tittle;
+    private javax.swing.JLabel UserProfileBackGround;
+    private javax.swing.JButton Vacaciones;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration                   
 }
