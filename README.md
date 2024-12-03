@@ -1,5 +1,5 @@
 >[!NOTE]
->Bienvenido a Proyecto 1 del Grupo formado por Daniel, María, Rodrigo y José Luis.
+>Bienvenido a Proyecto 1 del Grupo formado por xx, xx, xx y xx xx.
 
 >[!TIP]
 >Esperamos que os guste el contenido.
@@ -12,21 +12,9 @@
 
 
 # Proyecto1
+[<img src="https://www.justindorfman.com/assets/images/json.svg" align="right" width="100">](http://www.json.org/)
 
-public class Main {
-
-public static void main (String [] args){
-
-  System.out.println("Hola mundo");
-  System.out.println("Daniel");
-  System.out.println("María    ");
-}
-}
+## Contents
 
 
-
-
-git commit -am "Tu mensaje de commit" //Para hacer el commit con el mensaje directo desde la terminal y evitar hacer add y push
-
-
-Actualizacion del archivo y comprobacion de la sincornizacion
+<img src="https://static.scarf.sh/a.png?x-pxid=bb0fba6a-42e5-4544-9348-f91051d1aa4b" />
