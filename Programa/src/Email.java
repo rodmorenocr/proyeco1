@@ -1,20 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package GUI;
-
-/**
- *
- * @author 0ENNO
- */
 public class Email extends javax.swing.JFrame {
 
     /**
      * Creates new form Email
      */
-    public Email() {
+
+    public  Email() {
         initComponents();
+        this.setTitle("Email");
+        setLocationRelativeTo(null);
+
+        
+
     }
 
     /**
@@ -111,6 +107,8 @@ public class Email extends javax.swing.JFrame {
             }
         });
     }
+
+ 
 
     // Variables declaration - do not modify                     
     private javax.swing.JScrollBar jScrollBar1;
