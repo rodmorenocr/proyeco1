@@ -3,8 +3,8 @@ import javax.swing.JOptionPane;
 
 public class Bienvenido extends javax.swing.JFrame {
 
-    String nombres[] = {"marorthat", "rodmorcru", "jospedlop", "danjimfra", "hecbarcre"};
-    String claves[] = {"amarillo", "amarillo", "amarillo", "amarillo", "amarillo"};
+    String nombres[] = {"marorthat", "rodmorcru", "jospedlop", "dani", "hecbarcre"};
+    String claves[] = {"amarillo", "amarillo", "amarillo", "123", "amarillo"};
 //...
 
     /** //test para commit JLP
