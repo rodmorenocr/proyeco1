@@ -544,7 +544,10 @@ public class Menu extends javax.swing.JDialog {
         
     }                                         
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {  
+
+         JCalendar1 vacacionesApp = new JCalendar1();
+        vacacionesApp.setVisible(true);
         
     }                                         
 
