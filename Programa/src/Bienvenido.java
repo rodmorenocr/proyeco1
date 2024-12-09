@@ -1,6 +1,9 @@
 
 public class Bienvenido extends javax.swing.JFrame {
 
+    String nombres[] = {"marorthat, josortlad, danferjim, rodmorcru"};
+    String claves[] = {"amarillo", "amarillo", "amarillo", "amarillo"};
+
     /** //test para commit JLP
      * Creates new form Bienvenido
      */
@@ -143,13 +146,12 @@ public class Bienvenido extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        //String nombre = jTextFieldNombre.getText();
-       // String password = jTextFieldPassword.getText();
-      
-    
-        // Crear e invocar la interfaz de Menu en el hilo de despacho de eventos
+        String nombre = jTextFieldNombre.getText();
+        String clave = jTextFieldPassword.getText();   
+
         
-             Menu menu = new Menu( this, false);
+        
+        Menu menu = new Menu( this, false);
               menu.setVisible(true);
 
     }
