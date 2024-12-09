@@ -2,14 +2,14 @@
 public class UserProfile extends javax.swing.JFrame {
 
   
-    public UserProfile() {
+    public UserProfile(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Datos Empleado");
     }
 
-    
-                      
+                       
     private void initComponents() {
 
         jTextField2 = new javax.swing.JTextField();
@@ -577,7 +577,7 @@ public class UserProfile extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserProfile().setVisible(true);
+                new UserProfile().setVisible(false);
             }
         });
     }

@@ -237,7 +237,7 @@ public class Menu extends javax.swing.JDialog {
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("ICONO 1");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/UserProfile_Icon.png")));
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -518,7 +518,9 @@ public class Menu extends javax.swing.JDialog {
     }                                         
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        
+         // Datos Empleado
+         UserProfile UserProfileApp = new UserProfile((java.awt.Frame) null, false);
+         UserProfileApp.setVisible(true);
     }                                        
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
