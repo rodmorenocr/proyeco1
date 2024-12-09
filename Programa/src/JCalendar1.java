@@ -25,8 +25,7 @@ public class JCalendar1 extends JFrame implements ActionListener {
 
 
         calFull = new JCalendar2(this);
-       // calFull = new JCalendarFull(this, "07;03;1979;15;30");// "dia;mes;anio;hora;minutos"
-
+      
         setVisible(true);
 
         ImageIcon imagen = new ImageIcon("C:/Users/Dell/Desktop/JAVA/proy1/src/images/boutique1.png");
@@ -43,14 +42,7 @@ public class JCalendar1 extends JFrame implements ActionListener {
         JLabel jl = new JLabel("Ver Calendario:");
         jl.setBounds(370, 30, 150, 25);
         add(jl);
-/*
-        jtFecha = new JTextField();
-        jtFecha = new JTextField("            -         ");// dia/mes/anio
-        jtFecha.setBounds(170, 30, 80, 25);
-        jtFecha.setEditable(false);
-        add(jtFecha);
 
-*/
         ImageIcon img = new ImageIcon(getClass().getResource("images/calendar-icon.png"));
         jbSeleccFecha = new JButton(img);
         jbSeleccFecha.setBounds(490, 30, 24, 24);
@@ -125,53 +117,9 @@ public class JCalendar1 extends JFrame implements ActionListener {
         calFull.setVisible(true);
         jtFecha.setText(calFull.getFechaCompleta(1));
     }
-
-
-
-
-    /*
-
-
-        jbGuardar = new JButton("Ver datos Vacaciones del Usuario");
-        jbGuardar.setBounds(110, 70, 120, 25);
-        jbGuardar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //evento_jbGuardar();
-            }
-        });
-        add(jbGuardar);
-    }
-
-    private void evento_jbSeleccFecha() {
-        calFull.setVisible(true);
-        jtFecha.setText(calFull.getFechaCompleta(1));
-    }
-/*
-    private void evento_jbGuardar() {
-        verFechaFull();
-    }*/
-
-
-  /*  public void verFechaFull() {
-        System.out.println("----------- Fecha seleccionada ------------");
-        System.out.println("dia = " + calFull.getDia());
-        System.out.println("mes = " + calFull.getMes());
-        System.out.println("año = " + calFull.getYear());
-        System.out.println("numero dia semana = " + calFull.getDiaSemana());
-        System.out.println("nombre dia semana = " + calFull.getNombreDia());
-        System.out.println("nombre mes = " + calFull.getNombreMes());
-        System.out.println("hora numero = " + calFull.getHora());
-        System.out.println("hora cadena = " + calFull.getHoraCadena());
-        System.out.println("minutos numero = " + calFull.getMinutos());
-        System.out.println("minutos cadena = " + calFull.getMinutosCadena());
-        System.out.println("hora completa (formato militar) = " + calFull.getHoraCompleta());
-    }*/
-
+    
 }
     
-   /*public static void main(String[] args) {
-        JCalendarDemo demo = new JCalendarDemo();
-    }*/
+ 
 
 
