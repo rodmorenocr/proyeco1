@@ -30,7 +30,7 @@ public class Bienvenido extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextFieldPassword = new javax.swing.JTextField();
+        jTextFieldPassword = new javax.swing.JPasswordField();
         jButtonIngresar = new javax.swing.JButton();
         jButtonSALIR = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -151,7 +151,7 @@ public class Bienvenido extends javax.swing.JFrame {
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {                                                
         
         String nombre = jTextFieldNombre.getText();
-        String clave = jTextFieldPassword.getText();
+       /*/ String clave = jTextFieldPassword.getText();
         boolean encontrado = false;   
 
         for (int i = 0; i < nombres.length; i++) 
@@ -166,7 +166,7 @@ public class Bienvenido extends javax.swing.JFrame {
         if (!encontrado) 
         {
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "Comprobación", JOptionPane.ERROR_MESSAGE);
-        }
+        }*/
     }
     
                                                    
