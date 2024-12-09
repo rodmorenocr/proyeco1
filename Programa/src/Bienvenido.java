@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 public class Bienvenido extends javax.swing.JFrame {
 
     String nombres[] = {"marorthat", "rodmorenocr", "jospedlop", "jose", "dani", "hecbarcre"};
-    String claves[] = {"amarillo", "0000", "amarillo", "123", "amarillo"};
+    String claves[] = {"amarillo", "0000", "amarillo", "amarillo", "123", "amarillo"};
 //...
 
     /** //test para commit JLP
