@@ -14,7 +14,6 @@ public class JCalendar2 extends JDialog {
 
     private JCalendar jcFecha;
     private JButton jbAceptar, jbLimpiar, jbAhora;
-  //  private JComboBox<String> jcHora, jcMinutos;
     private int dia, mes, year, diaSemana, hora, minutos;
     String nombreDia, nombreMes, horaCadena, minutosCadena, fechaCompleta, horaCompleta;
     boolean selecciono;
@@ -48,18 +47,11 @@ public class JCalendar2 extends JDialog {
                 
         jcFecha.setDate(calendario.getTime());  //asignar la fecha al jcFecha
         
-      // jcHora.setSelectedItem(tokens[3]);      //asignar la hora al combobox
-      //  jcMinutos.setSelectedItem(tokens[4]);   //asignar los minutos al combobox
-        
+   
         dia = calendario.get(Calendar.DATE);
         mes = calendario.get(Calendar.MONTH) + 1;
         year = calendario.get(Calendar.YEAR);
         diaSemana = calendario.get(Calendar.DAY_OF_WEEK);
-
-      //  hora = Integer.parseInt((String) jcHora.getSelectedItem());
-      //  minutos = Integer.parseInt((String) jcMinutos.getSelectedItem());
-      //  horaCadena = (String) jcHora.getSelectedItem();
-      //  minutosCadena = (String) jcMinutos.getSelectedItem();
         
         setNombreDia();
         setNombreMes();
@@ -86,30 +78,7 @@ public class JCalendar2 extends JDialog {
         jcFecha = new JCalendar();// crear el JCalendar con la fecha actual del sistema
         jcFecha.setBounds(30, 10, 240, 200);// Ubicar y agregar al panel             
         add(jcFecha);
-        /*
-        jcHora = new JComboBox<String>();
-        for(int i = 0; i < 24; i++){
-            if(i < 10) jcHora.addItem("0" + i);
-            else jcHora.addItem("" + i);
-        }
-        jcHora.setBounds(97, 215, 48, 25);
-        add(jcHora);*/
-        
-      /*  JLabel jl = new JLabel("***************************");
-        jl.setBounds(152, 215, 20, 25);
-        add(jl);
-        
-        jcMinutos = new JComboBox<String>();
-        for(int i = 0; i < 60; i++){
-            if(i < 10) jcMinutos.addItem("0" + i);
-            else jcMinutos.addItem("" + i);
-        }
-        jcMinutos.setBounds(162, 215, 48, 25);
-        add(jcMinutos);
-
-
-       */
-
+ 
         jbAceptar = new JButton("Solicitar día");
         jbAceptar.setBounds(20, 248, 150, 25);// Ubicar y agregar al panel
         jbAceptar.addActionListener(new ActionListener() {
@@ -119,17 +88,7 @@ public class JCalendar2 extends JDialog {
             }
         });
         add(jbAceptar);
-        /*
-        jbAhora = new JButton("Ahora");
-        jbAhora.setBounds(110, 248, 80, 25);// Ubicar y agregar al panel
-        jbAhora.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                evento_jbAhora();
-            }
-        });
-        add(jbAhora);
-        */
+       
         
         jbLimpiar = new JButton("Volver");
         jbLimpiar.setBounds(195, 248, 85, 25);// Ubicar y agregar al panel
@@ -149,35 +108,12 @@ public class JCalendar2 extends JDialog {
         mes = calendario.get(Calendar.MONTH) + 1;
         year = calendario.get(Calendar.YEAR);
         diaSemana = calendario.get(Calendar.DAY_OF_WEEK);
-      //  hora = Integer.parseInt((String) jcHora.getSelectedItem());
-      //  minutos = Integer.parseInt((String) jcMinutos.getSelectedItem());
-      //  horaCadena = (String) jcHora.getSelectedItem();
-      //  minutosCadena = (String) jcMinutos.getSelectedItem();
-        
+    
         setNombreDia();
         setNombreMes();
         
         setVisible(false);
     }
-
- /*   private void evento_jbAhora() {
-        jcFecha.setDate(new Date());// asignar la fecha actual del sistema al JCalendar
-        
-        // obtener la fecha actual del sistema
-        Calendar actual = Calendar.getInstance();
-        int hora = actual.get(Calendar.HOUR_OF_DAY); // obtener la hora del dia
-        int min =   actual.get(Calendar.MINUTE); // obtener los minutos del dia
-        
-        // asignar la hora al combobox
-        if(hora < 10) jcHora.setSelectedItem("0" + hora);
-        else jcHora.setSelectedItem(hora + "");
-        
-        // asignar los minutos al combobox
-        if(min < 10) jcMinutos.setSelectedItem("0" + min);
-        else jcMinutos.setSelectedItem(min + "");        
-    }
-    */
-
     
     private void evento_jbLimpiar() {
         set(); // asignar atributos con valores por defecto
