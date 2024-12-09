@@ -1,5 +1,10 @@
 
 import java.awt.Color;
+import javax.swing.*;
+import javax.swing.event.TreeExpansionEvent;
+import javax.swing.event.TreeExpansionListener;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreePath;
 
 
 public class Nominas extends javax.swing.JDialog {
@@ -126,14 +131,14 @@ public class Nominas extends javax.swing.JDialog {
         jButton10.setForeground(Color.white);
         jButton10.setBackground(new java.awt.Color(102, 102, 102));
         jButton10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton10.setText("Cerrar sesión");
+        jButton10.setText("Salir");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Foto_de_persona.png")));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_de_persona.png")));
 
         // Configuración del layout del panel secundario
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -199,19 +204,19 @@ public class Nominas extends javax.swing.JDialog {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Calendario.png")));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Calendario.png")));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel4.setText("Recibo de nóminas");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Foto_Cabezera.png")));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_Cabezera.png")));
 
         jTextField2.setBackground(new java.awt.Color(204, 204, 204));
         jTextField2.setFont(jTextField2.getFont());
         jTextField2.setText("Buscar");
 
         // Configuración del árbol de nóminas
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("WorkSpace Marina");
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("WorkSpace");
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Año 2024");
         treeNode1.add(treeNode2);
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Recibos de nómina:");
@@ -265,6 +270,32 @@ treeNode2.add(treeNode3);
 treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Recibo de nómina de Enero");
 treeNode2.add(treeNode3);
 treeNode1.add(treeNode2);
+
+JTree tree = new JTree(treeNode2);
+tree.addTreeExpansionListener(new TreeExpansionListener() {
+    @Override
+    public void treeExpanded(TreeExpansionEvent event) {
+        TreePath path = event.getPath();
+        DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) path.getLastPathComponent();
+        System.out.println("Nodo expandido: " + selectedNode); // Mensaje de depuración
+        if (selectedNode.isLeaf()) {
+            System.out.println("Nodo hoja expandido: " + selectedNode); // Mensaje de depuración
+            java.net.URL imgURL = getClass().getResource("/images/nominas/Nomina.png");
+            if (imgURL != null) {
+                jLabel3.setIcon(new javax.swing.ImageIcon(imgURL));
+                System.out.println("Imagen cambiada"); // Mensaje de depuración
+            } else {
+                System.out.println("Error: Imagen no encontrada en la ruta especificada");
+            }
+        }
+    }
+
+
+            @Override
+            public void treeCollapsed(TreeExpansionEvent event) {
+                // Puedes manejar la contracción del nodo aquí si es necesario
+            }
+        });
 
 jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
 jScrollPane1.setViewportView(jTree1);
@@ -344,6 +375,8 @@ private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {
 }
 private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {
     // TODO add your handling code aquí:
+    setVisible(false);
+        dispose(); 
 }
 
 
