@@ -1,8 +1,11 @@
 
+import javax.swing.JOptionPane;
+
 public class Bienvenido extends javax.swing.JFrame {
 
-    String nombres[] = {"marorthat, josortlad, danferjim, rodmorcru"};
+    String nombres[] = {"marorthat", "josortlad", "danferjim", "rodmorcru"};
     String claves[] = {"amarillo", "amarillo", "amarillo", "amarillo"};
+//...
 
     /** //test para commit JLP
      * Creates new form Bienvenido
@@ -146,14 +149,24 @@ public class Bienvenido extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        
         String nombre = jTextFieldNombre.getText();
-        String clave = jTextFieldPassword.getText();   
+        String clave = jTextFieldPassword.getText();
+        boolean encontrado = false;   
 
-        
-        
-        Menu menu = new Menu( this, false);
-              menu.setVisible(true);
-
+        for (int i = 0; i < nombres.length; i++) 
+        {
+            if (nombres[i].equals(nombre) && claves[i].equals(clave))
+            {
+                encontrado = true;
+                Menu menu = new Menu( this, false);
+                menu.setVisible(true);
+            }
+        }
+        if (!encontrado) 
+        {
+            JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "Comprobación", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
                                                    
