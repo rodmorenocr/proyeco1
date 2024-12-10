@@ -237,7 +237,7 @@ public class Menu extends javax.swing.JDialog {
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/ICON_UserProfile.png")));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/ICON_User.png")));
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N

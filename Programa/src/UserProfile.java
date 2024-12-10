@@ -1,5 +1,5 @@
 
-public class UserProfile extends javax.swing.JFrame {
+public class UserProfile extends javax.swing.JDialog {
 
   
     public UserProfile(java.awt.Frame parent, boolean modal) {
@@ -196,7 +196,7 @@ public class UserProfile extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel3.setBackground(new java.awt.Color(157, 153, 155));
         jPanel3.setForeground(new java.awt.Color(60, 63, 65));
@@ -572,15 +572,6 @@ public class UserProfile extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-       
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new UserProfile().setVisible(false);
-            }
-        });
-    }
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
