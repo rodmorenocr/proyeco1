@@ -544,7 +544,9 @@ public class Menu extends javax.swing.JDialog {
         
     }                                        
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {            
+        Horario mihorario = new Horario((java.awt.Frame) null, false);
+        mihorario.setVisible(true);                              
         
     }                                         
 
