@@ -53,21 +53,22 @@ public class Menu extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(68, 68, 68));
 
-        jTextField1.setBackground(new java.awt.Color(102, 102, 102));
+        jTextField1.setBackground(new java.awt.Color(38, 38, 38));
         jTextField1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("Inicio");
         jTextField1.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(102, 102, 102));
+        jButton3.setBackground(new java.awt.Color(38, 38, 38));
         jButton3.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Mail");
@@ -80,7 +81,7 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(102, 102, 102));
+        jButton4.setBackground(new java.awt.Color(38, 38, 38));
         jButton4.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Mis datos personales");
@@ -93,7 +94,7 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(102, 102, 102));
+        jButton6.setBackground(new java.awt.Color(38, 38, 38));
         jButton6.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Mis nóminas");
@@ -106,7 +107,7 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(102, 102, 102));
+        jButton7.setBackground(new java.awt.Color(38, 38, 38));
         jButton7.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Mi horario");
@@ -119,7 +120,7 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(102, 102, 102));
+        jButton8.setBackground(new java.awt.Color(38, 38, 38));
         jButton8.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Mis vacaciones");
@@ -132,7 +133,7 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton9.setBackground(new java.awt.Color(102, 102, 102));
+        jButton9.setBackground(new java.awt.Color(38, 38, 38));
         jButton9.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Mis cursos");
@@ -145,7 +146,7 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton10.setBackground(new java.awt.Color(102, 102, 102));
+        jButton10.setBackground(new java.awt.Color(38, 38, 38));
         jButton10.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setText("Seguro médico");
@@ -158,7 +159,7 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton11.setBackground(new java.awt.Color(102, 102, 102));
+        jButton11.setBackground(new java.awt.Color(38, 38, 38));
         jButton11.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("Noticias de la empresa");
@@ -171,7 +172,7 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jTextField2.setBackground(new java.awt.Color(102, 102, 102));
+        jTextField2.setBackground(new java.awt.Color(38, 38, 38));
         jTextField2.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(255, 255, 255));
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -183,6 +184,7 @@ public class Menu extends javax.swing.JDialog {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("ICONO");
+        
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -232,59 +234,59 @@ public class Menu extends javax.swing.JDialog {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/ICON_User.png")));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos_menu/1.png")));
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/ICON_Nomina.png")));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos_menu/2.png")));
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("ICONO 4");
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos_menu/4.png")));
         jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("ICONO 3");
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos_menu/3.png")));
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("ICONO 6");
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos_menu/6.png")));
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("ICONO 7");
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos_menu/7.png")));
         jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("ICONO 8");
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos_menu/8.png")));
         jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("ICONO 5");
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconos_menu/5.png")));
         jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 255));
-        jButton1.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 102, 153));
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Mis datos personales");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -292,9 +294,9 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(153, 153, 255));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 102, 153));
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Mis nóminas");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -302,9 +304,9 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(153, 153, 255));
-        jButton5.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 102, 153));
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setText("Mis cursos");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -312,9 +314,9 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton12.setBackground(new java.awt.Color(153, 153, 255));
-        jButton12.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jButton12.setForeground(new java.awt.Color(0, 102, 153));
+        jButton12.setBackground(new java.awt.Color(255, 255, 255));
+        jButton12.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jButton12.setForeground(new java.awt.Color(0, 0, 0));
         jButton12.setText("Mi horario");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -322,9 +324,9 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton13.setBackground(new java.awt.Color(153, 153, 255));
-        jButton13.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jButton13.setForeground(new java.awt.Color(0, 102, 153));
+        jButton13.setBackground(new java.awt.Color(255, 255, 255));
+        jButton13.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(0, 0, 0));
         jButton13.setText("Mis vacaciones");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,9 +334,9 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton14.setBackground(new java.awt.Color(153, 153, 255));
-        jButton14.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jButton14.setForeground(new java.awt.Color(0, 102, 153));
+        jButton14.setBackground(new java.awt.Color(255, 255, 255));
+        jButton14.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jButton14.setForeground(new java.awt.Color(0, 0, 0));
         jButton14.setText("Email");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -342,9 +344,9 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton15.setBackground(new java.awt.Color(153, 153, 255));
-        jButton15.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jButton15.setForeground(new java.awt.Color(0, 102, 153));
+        jButton15.setBackground(new java.awt.Color(255, 255, 255));
+        jButton15.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jButton15.setForeground(new java.awt.Color(0, 0, 0));
         jButton15.setText("Seguro médico");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -352,9 +354,9 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton16.setBackground(new java.awt.Color(153, 153, 255));
-        jButton16.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jButton16.setForeground(new java.awt.Color(0, 102, 153));
+        jButton16.setBackground(new java.awt.Color(255, 255, 255));
+        jButton16.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jButton16.setForeground(new java.awt.Color(0, 0, 0));
         jButton16.setText("Configuración");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -362,9 +364,9 @@ public class Menu extends javax.swing.JDialog {
             }
         });
 
-        jButton17.setBackground(new java.awt.Color(153, 153, 255));
+        jButton17.setBackground(new java.awt.Color(255, 255, 255));
         jButton17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton17.setForeground(new java.awt.Color(0, 102, 153));
+        jButton17.setForeground(new java.awt.Color(0, 0, 0));
         jButton17.setText("Cerrar sesión");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
