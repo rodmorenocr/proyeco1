@@ -202,7 +202,7 @@ public class Nominas extends javax.swing.JDialog {
         jTextField2.setText("Buscar");
 
         // Configuración del árbol de nóminas
-        jTree1.setBackground(new java.awt.Color(204, 204, 255));
+        jTree1.setBackground(new java.awt.Color(250, 250, 250));
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("WorkSpace");
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Año 2024");
         treeNode1.add(treeNode2);
