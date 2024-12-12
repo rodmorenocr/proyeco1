@@ -28,10 +28,13 @@ public class JCalendar1 extends JFrame implements ActionListener {
       
         setVisible(true);
 
-        ImageIcon imagen = new ImageIcon("C:/Users/Dell/Desktop/JAVA/proy1/src/images/boutique1.png");
-        jlabelImagen = new JLabel(imagen);
+        ImageIcon img = new ImageIcon(getClass().getResource("images/boutique1.png"));
+       // ImageIcon imagen = new ImageIcon("images/boutique1.png");
+        jlabelImagen = new JLabel(img);
         jlabelImagen.setBounds(10,15,300,320);
         add(jlabelImagen);
+
+       
     }
 
     private void crearGUI() {
