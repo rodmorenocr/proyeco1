@@ -340,7 +340,8 @@ private void updateTime() {
 
 
 // Variables declaration - do not modify
-private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton1;
+    private long startTime;
     private javax.swing.JButton jButton10;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton jButton12;
@@ -363,6 +364,7 @@ private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.Timer timer;
+    private javax.swing.Timer timer2;
     
 // End of variables declaration
 }
