@@ -129,7 +129,7 @@ public class UserProfile extends javax.swing.JDialog {
 
         jButton10.setBackground(new java.awt.Color(102, 102, 102));
         jButton10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton10.setText("Cerrar seción");
+        jButton10.setText("Cerrar sesión");
 
         jLabel2.setText("ICON");
 
@@ -254,6 +254,11 @@ public class UserProfile extends javax.swing.JDialog {
         jButton20.setBackground(new java.awt.Color(102, 102, 102));
         jButton20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton20.setText("Cerrar");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_de_persona.png"))); // NOI18N
         jLabel15.setText("ICON");
@@ -567,7 +572,13 @@ public class UserProfile extends javax.swing.JDialog {
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
-    }                                         
+    }
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code aquí:
+        setVisible(false);
+        dispose();
+    }
 
     /**
      * @param args the command line arguments
