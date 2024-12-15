@@ -283,19 +283,22 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
     // TODO add your handling code aquí:
 }
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-    // TODO add your handling code aquí:
+    UserProfile UserProfileApp = new UserProfile((java.awt.Frame) null, false);
+    UserProfileApp.setVisible(true);
 }
 private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-
+    
 }
 private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
     // TODO add your handling code aquí:
 }
 private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
-    // TODO add your handling code aquí:
+    Horario mihorario = new Horario((java.awt.Frame) null, false);
+        mihorario.setVisible(true);
 }
 private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
-    // TODO add your handling code aquí:
+    JCalendar1 vacacionesApp = new JCalendar1();
+        vacacionesApp.setVisible(true);
 }
 private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {
     // TODO add your handling code aquí:

@@ -33,14 +33,14 @@ public class Horario extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
+        Mostrar_tiempo = new javax.swing.JLabel();
+        Iniciar_jornada = new javax.swing.JButton();
+        Finalizar_jornada = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         timeLabel = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-
+        
         // Configuración de la ventana
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setIconImages(getIconImages());
@@ -87,19 +87,22 @@ public class Horario extends javax.swing.JDialog {
                 jButton4ActionPerformed(evt);
             }
         });
-
+        jButton5.setForeground(Color.white);
+        jButton5.setBackground(new java.awt.Color(102, 102, 102));
         jButton5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jButton5.setText("Mis nóminas");
-
-        jButton6.setForeground(Color.white);
-        jButton6.setBackground(new java.awt.Color(102, 102, 102));
-        jButton6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton6.setText("Mi horario");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                jButton5ActionPerformed(evt);
             }
         });
+
+        
+        
+        jButton6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton6.setText("Mi horario");
+        
+        
 
         jButton7.setForeground(Color.white);
         jButton7.setBackground(new java.awt.Color(102, 102, 102));
@@ -195,30 +198,52 @@ public class Horario extends javax.swing.JDialog {
                 .addComponent(jButton10)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        // Inicializa el timer
+        // Inicializamos los timerer
+        timer2 = new javax.swing.Timer(1000, new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Mostrar_tiempo();
+            }
+            
+        });
         timer = new javax.swing.Timer(1000, new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateTime();
+                
             }
+            
         });
         jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel4.setText("Horario de trabajo");
 
-        jToggleButton1.setBackground(new java.awt.Color(255, 153, 153));
-        jToggleButton1.setText("Mostrar tiempo facturado");
+        Mostrar_tiempo.setBackground(new java.awt.Color(255, 153, 153));
+        Mostrar_tiempo.setText("Mostrar tiempo facturado");
+        
 
-        jButton12.setBackground(new java.awt.Color(102, 204, 255));
-        jButton12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton12.setText("Iniciar jornada");
+        Iniciar_jornada.setBackground(new java.awt.Color(102, 204, 255));
+        Iniciar_jornada.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Iniciar_jornada.setText("Iniciar jornada");
+        Iniciar_jornada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Iniciar_jornada(evt);
+            }
+        });
 
-        jButton13.setBackground(new java.awt.Color(102, 204, 255));
-        jButton13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton13.setText("Finalizar jornada");
+        Finalizar_jornada.setBackground(new java.awt.Color(102, 204, 255));
+        Finalizar_jornada.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Finalizar_jornada.setText("Finalizar jornada");
+        Finalizar_jornada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Finalizar_jornada(evt);
+            }
+        });
 
-        jLabel1.setText("jLabel1");
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Horario_trabajo.png")));
+        jLabel1.setText("Tiempo computado");
+        jLabel1.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 24)); 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER); // Centra el texto horizontalmente
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.CENTER);   // Centra el texto verticalmente
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_calendario.png")));
         jLabel5.setText("Hora actual");
-        timeLabel.setText("timeLabel");
+        
         timeLabel.setText("timeLabel");
         timeLabel.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 24)); 
         timeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER); // Centra el texto horizontalmente
@@ -243,11 +268,11 @@ public class Horario extends javax.swing.JDialog {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(6, 6, 6)
-                                                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(Iniciar_jornada, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(Finalizar_jornada, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(Mostrar_tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -272,13 +297,13 @@ public class Horario extends javax.swing.JDialog {
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Iniciar_jornada, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Finalizar_jornada, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(timeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                            .addComponent(Mostrar_tiempo, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -291,22 +316,23 @@ public class Horario extends javax.swing.JDialog {
 }
 // Acción del botón 2
 private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-    // TODO add your handling code aquí:
+    
 }
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-    // TODO add your handling code aquí:
+    UserProfile UserProfileApp = new UserProfile((java.awt.Frame) null, false);
+    UserProfileApp.setVisible(true);
 }
 private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-
+    
 }
 private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
-    // TODO add your handling code aquí:
+    Nominas nominaApp = new Nominas((java.awt.Frame) null, false);
+        nominaApp.setVisible(true);
 }
-private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
-    // TODO add your handling code aquí:
-}
+
 private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
-    // TODO add your handling code aquí:
+    JCalendar1 vacacionesApp = new JCalendar1();
+        vacacionesApp.setVisible(true);
 }
 private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {
     // TODO add your handling code aquí:
@@ -325,12 +351,33 @@ private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {
 
 private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {                                          
     // TODO add your handling code here:
-}       
+} 
+      
+private void Iniciar_jornada(java.awt.event.ActionEvent evt) {                                          
+    startTime = System.currentTimeMillis();
+    
+    timer2.start();
+}        
+private void Finalizar_jornada(java.awt.event.ActionEvent evt) {                                          
+    timer2.stop();
+    accumulatedTime += System.currentTimeMillis() - startTime;
+}        
 private void updateTime() {
     java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("HH:mm:ss");
     String currentTime = sdf.format(new java.util.Date());
     timeLabel.setText(currentTime);
+    
 }
+private void Mostrar_tiempo() {
+    
+    long elapsedTime = System.currentTimeMillis() - startTime + accumulatedTime;;
+    long hours = (elapsedTime / 3600000) % 24;
+    long minutes = (elapsedTime / 60000) % 60;
+    long seconds = (elapsedTime / 1000) % 60;
+    jLabel1.setText(String.format("%02d:%02d:%02d", hours, minutes, seconds));
+}
+
+
 
 
 
@@ -343,9 +390,9 @@ private void updateTime() {
     private javax.swing.JButton jButton1;
     private long startTime;
     private javax.swing.JButton jButton10;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
+    private javax.swing.JLabel Mostrar_tiempo;
+    private javax.swing.JButton Iniciar_jornada;
+    private javax.swing.JButton Finalizar_jornada;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -360,10 +407,12 @@ private void updateTime() {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel timeLabel;
+    private javax.swing.JLabel timeLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.Timer timer;
+    private long accumulatedTime = 0;
     private javax.swing.Timer timer2;
     
 // End of variables declaration

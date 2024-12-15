@@ -207,16 +207,16 @@ public class UserProfile extends javax.swing.JDialog {
 
         jButton12.setBackground(new java.awt.Color(102, 102, 102));
         jButton12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton12.setText("Correo");
+        jButton12.setText("Mail");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton12ActionPerformed(evt);
             }
         });
 
-        jButton13.setBackground(new java.awt.Color(102, 102, 102));
+        //jButton13.setBackground(new java.awt.Color(102, 102, 102));
         jButton13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton13.setText("Empleado");
+        jButton13.setText("Datos personales");
 
         jButton14.setBackground(new java.awt.Color(102, 102, 102));
         jButton14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -226,7 +226,7 @@ public class UserProfile extends javax.swing.JDialog {
                 jButton14ActionPerformed(evt);
             }
         });
-
+        jButton15.setBackground(new java.awt.Color(102, 102, 102));
         jButton15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton15.setText("Mis nóminas");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -238,10 +238,20 @@ public class UserProfile extends javax.swing.JDialog {
         jButton16.setBackground(new java.awt.Color(102, 102, 102));
         jButton16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton16.setText("Mi horario");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         jButton17.setBackground(new java.awt.Color(102, 102, 102));
         jButton17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton17.setText("Mis vacaciones");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
 
         jButton18.setBackground(new java.awt.Color(102, 102, 102));
         jButton18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -253,7 +263,7 @@ public class UserProfile extends javax.swing.JDialog {
 
         jButton20.setBackground(new java.awt.Color(102, 102, 102));
         jButton20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton20.setText("Cerrar");
+        jButton20.setText("Salir");
         jButton20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton20ActionPerformed(evt);
@@ -388,13 +398,13 @@ public class UserProfile extends javax.swing.JDialog {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_de_persona.png"))); // NOI18N
         jLabel3.setText("ICON");
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_de_persona.png"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Foto_persona3.png"))); // NOI18N
         jLabel17.setText("ICON");
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_de_persona.png"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Foto_persona2.png"))); // NOI18N
         jLabel18.setText("ICON");
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_de_persona.png"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Foto_persona4.png"))); // NOI18N
         jLabel19.setText("ICON");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -564,7 +574,19 @@ public class UserProfile extends javax.swing.JDialog {
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
-    }                                         
+        Nominas nominaApp = new Nominas((java.awt.Frame) null, false);
+        nominaApp.setVisible(true);
+    }     
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        Horario mihorario = new Horario((java.awt.Frame) null, false);
+        mihorario.setVisible(true);   
+    }   
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        JCalendar1 vacacionesApp = new JCalendar1();
+        vacacionesApp.setVisible(true);
+    }                                       
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
