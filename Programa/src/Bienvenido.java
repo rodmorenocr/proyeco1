@@ -16,7 +16,7 @@ public class Bienvenido extends javax.swing.JFrame {
         this.setTitle("Aura Boutique - Inicio");
     }
 
-    //
+    // hola soy rodrigo
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -148,9 +148,9 @@ public class Bienvenido extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>
 
-    private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {
         
         String nombre = jTextFieldNombre.getText();
         String clave = jTextFieldPassword.getText();
