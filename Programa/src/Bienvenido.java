@@ -16,7 +16,8 @@ public class Bienvenido extends javax.swing.JFrame {
         this.setTitle("Aura Boutique - Inicio");
     }
 
-
+// rodrigo moreno
+    //rodrigo moreno
 
     /**
      * This method is called from within the constructor to initialize the form.
