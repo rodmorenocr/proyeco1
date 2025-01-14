@@ -1,6 +1,6 @@
 public class Menu extends javax.swing.JDialog {
 
-    String fotoUsuario = "";
+    public static String fotoUsuario = "";
     String nombreUsuario = "";
 
     /**
@@ -9,16 +9,17 @@ public class Menu extends javax.swing.JDialog {
     public Menu(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        setLocationRelativeTo(null);
-        this.setTitle("Menú principal");
 
         nombreUsuario = Bienvenido.nombreUsuario;
-        System.out.print("valor variable nombre: " + nombreUsuario);
+        System.out.println("valor variable nombre: " + nombreUsuario);
 
-        if (nombreUsuario == "dani")
+       if (nombreUsuario.equals("dani"))
         {
-            fotoUsuario = "/usuarios/dani/Foto_de_persona.png";
+            fotoUsuario = "usuarios/dani/Foto_persona2.png";
         }
+
+        setLocationRelativeTo(null);
+        this.setTitle("Menú principal");
     }
 
 
@@ -195,7 +196,7 @@ public class Menu extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/Foto_de_persona.png")));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Foto_persona3.png")));
         
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
