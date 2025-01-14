@@ -17,7 +17,6 @@ public class JCalendar1 extends JFrame implements ActionListener {
     public JCalendar1() {
         super("Mis Vacaciones");
         setSize(650, 400);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(null);
         crearGUI();
