@@ -5,6 +5,8 @@ public class Bienvenido extends javax.swing.JFrame {
 
     String nombres[] = {"evamorenocr","marorthat", "rodmorenocr", "jospedlop", "jose", "dani", "hecbarcre"};
     String claves[] = {"0000","amarillo", "0000", "amarillo", "amarillo", "123", "amarillo"};
+    public static String nombreUsuario;
+    
 //...
 
     /** //test para commit JLP
@@ -162,6 +164,7 @@ public class Bienvenido extends javax.swing.JFrame {
             if (nombres[i].equals(nombre) && claves[i].equals(clave))
             {
                 encontrado = true;
+                nombreUsuario = nombre;
                 Menu menu = new Menu( this, false);
                 menu.setVisible(true);
             }
