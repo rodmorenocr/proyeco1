@@ -328,6 +328,7 @@ private void jTree1ValueChanged(javax.swing.event.TreeSelectionEvent evt) {
         String nodeName = selectedNode.toString();
         if (nodeName.equals("Nómina Diciembre")) {
             jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Nomina2.png")));
+            
         } else if(nodeName.equals("Nómina Octubre")){
             // Puedes manejar otros nodos aquí
             jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Calendario.png")));
