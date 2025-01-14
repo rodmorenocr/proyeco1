@@ -1,5 +1,8 @@
 public class Menu extends javax.swing.JDialog {
 
+    String fotoUsuario = "";
+    String nombreUsuario = "";
+
     /**
      * Creates new form Menu
      */
@@ -8,7 +11,16 @@ public class Menu extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(null);
         this.setTitle("Menú principal");
+
+        nombreUsuario = Bienvenido.nombreUsuario;
+        System.out.print("valor variable nombre: " + nombreUsuario);
+
+        if (nombreUsuario == "dani")
+        {
+            fotoUsuario = "/usuarios/dani/Foto_de_persona.png";
+        }
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -183,7 +195,7 @@ public class Menu extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_de_persona.png")));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/Foto_de_persona.png")));
         
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
