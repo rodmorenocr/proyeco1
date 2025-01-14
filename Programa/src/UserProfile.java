@@ -1,12 +1,71 @@
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 public class UserProfile extends javax.swing.JDialog {
+
+    static String nombreUsuario = "";
+    static String nombre = "";
+    static String apellido = "";
+    static String email = "";
+    static String puesto = "";
+    static String telefono = "";
+    static String direccion = "";
+    static String codigoPostal = "";
+    static String ciudad = "";
+    static String provincia = "";
+    static String pais = "";
 
   
     public UserProfile(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+
+        nombreUsuario = Bienvenido.nombreUsuario;
+        if (nombreUsuario.equals("dani"))
+        {
+            leer_ficheros("Programa\\src\\usuarios\\dani\\datos.property");
+        }
+        else if (nombreUsuario.equals("marorthat")) 
+        {
+            leer_ficheros("Programa\\src\\usuarios\\marorthat\\datos.property");
+        }
+
+        jTextPane1.setText(apellido);
+        jScrollPane1.setViewportView(jTextPane1);
+
+        jTextPane2.setText(nombre);
+        jScrollPane2.setViewportView(jTextPane2);
+
+        jTextPane3.setText(puesto);
+        jScrollPane3.setViewportView(jTextPane3);
+
+        jTextPane4.setText(email);
+        jScrollPane4.setViewportView(jTextPane4);
+
+        jTextPane5.setText(telefono);
+        jScrollPane5.setViewportView(jTextPane5);
+
+        jTextPane6.setText(direccion);
+        jScrollPane6.setViewportView(jTextPane6);
+
+        jTextPane7.setText(codigoPostal);
+        jScrollPane7.setViewportView(jTextPane7);
+
+        jTextPane8.setText(ciudad);
+        jScrollPane8.setViewportView(jTextPane8);
+
+        jTextPane9.setText(provincia);
+        jScrollPane9.setViewportView(jTextPane9);
+
+        jTextPane10.setText(pais);
+        jScrollPane10.setViewportView(jTextPane10);
+
+
         setLocationRelativeTo(null);
-        this.setTitle("Datos Empleado");
+        this.setTitle("Datos Personales");
+
+        
     }
 
                        
@@ -270,7 +329,7 @@ public class UserProfile extends javax.swing.JDialog {
             }
         });
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_de_persona.png"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource(Menu.fotoUsuario))); // NOI18N
         jLabel15.setText("ICON");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -362,13 +421,14 @@ public class UserProfile extends javax.swing.JDialog {
         jButton22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton22ActionPerformed(evt);
+                setVisible(false);
             }
         });
 
-        jTextPane1.setText("García López");
+        /*jTextPane1.setText("García López");
         jScrollPane1.setViewportView(jTextPane1);
 
-        jTextPane2.setText("Eva");
+        jTextPane2.setText(nombre);
         jScrollPane2.setViewportView(jTextPane2);
 
         jTextPane3.setText("Manager Ventas");
@@ -393,7 +453,7 @@ public class UserProfile extends javax.swing.JDialog {
         jScrollPane9.setViewportView(jTextPane9);
 
         jTextPane10.setText("España");
-        jScrollPane10.setViewportView(jTextPane10);
+        jScrollPane10.setViewportView(jTextPane10);*/
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_de_persona.png"))); // NOI18N
         jLabel3.setText("ICON");
@@ -601,6 +661,43 @@ public class UserProfile extends javax.swing.JDialog {
         setVisible(false);
         dispose();
     }
+
+    public static void leer_ficheros(String ubicacionFichero)
+    {
+        Properties propiedades = new Properties();
+        try (FileInputStream entrada = new FileInputStream(ubicacionFichero)) {
+            // Cargar las propiedades desde el fichero
+            propiedades.load(entrada);
+
+            // Obtener las propiedades
+            nombre = propiedades.getProperty("nombre");
+            apellido = propiedades.getProperty("apellidos");
+            email = propiedades.getProperty("email");
+            puesto = propiedades.getProperty("puesto");
+            telefono = propiedades.getProperty("telefono");
+            direccion = propiedades.getProperty("direccion");
+            codigoPostal = propiedades.getProperty("codigo_postal");
+            ciudad = propiedades.getProperty("ciudad");
+            provincia = propiedades.getProperty("provincia");
+            pais = propiedades.getProperty("pais");
+
+            System.out.println("Nombre: " + nombre);
+            System.out.println("Apellidos: " + apellido);
+            System.out.println("Email: " + email);
+            System.out.println("Puesto: " + puesto);
+            System.out.println("Telefono: " + telefono);
+            System.out.println("Dirección: " + direccion);
+            System.out.println("Código postal: " + codigoPostal);
+            System.out.println("Ciudad: " + ciudad);
+            System.out.println("Provincia: " + provincia);
+            System.out.println("País: " + pais);
+
+        } catch (IOException e) {
+            System.out.println("Fichero no encontrado");
+            //e.printStackTrace();
+        }
+    }
+
 
     /**
      * @param args the command line arguments
