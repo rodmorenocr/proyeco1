@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -16,6 +17,8 @@ public class UserProfile extends javax.swing.JDialog {
     static String provincia = "";
     static String pais = "";
 
+    String ficheroDatosPersonales = "";
+
   
     public UserProfile(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -24,7 +27,8 @@ public class UserProfile extends javax.swing.JDialog {
         nombreUsuario = Bienvenido.nombreUsuario;
         if (nombreUsuario.equals("dani"))
         {
-            leer_ficheros("Programa\\src\\usuarios\\dani\\datos.property");
+            leer_ficheros("Programa\\src\\usuarios\\dani\\datos.properties");
+            ficheroDatosPersonales = "Programa\\src\\usuarios\\dani\\datos.properties";
         }
         else if (nombreUsuario.equals("marorthat")) 
         {
@@ -412,6 +416,41 @@ public class UserProfile extends javax.swing.JDialog {
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton21ActionPerformed(evt);
+                //recogemos los datos
+                String nombre_nuevo = jTextPane2.getText();
+                String apellido_nuevo = jTextPane1.getText();
+                String email_nuevo = jTextPane4.getText();
+                String puesto_nuevo = jTextPane3.getText();
+                String telefono_nuevo = jTextPane5.getText();
+                String direccion_nuevo = jTextPane6.getText();
+                String codigoPostal_nuevo = jTextPane7.getText();
+                String ciudad_nuevo = jTextPane8.getText();
+                String provincia_nuevo = jTextPane9.getText();
+                String pais_nuevo = jTextPane10.getText();
+
+                Properties properties = new Properties();
+                try (FileInputStream input = new FileInputStream(ficheroDatosPersonales)) {
+                    properties.load(input);
+                    properties.setProperty("nombre", nombre_nuevo);
+                    properties.setProperty("apellidos", apellido_nuevo);
+                    properties.setProperty("email", email_nuevo);
+                    properties.setProperty("puesto", puesto_nuevo);
+                    properties.setProperty("telefono", telefono_nuevo);
+                    properties.setProperty("direccion", direccion_nuevo);
+                    properties.setProperty("codigo_postal", codigoPostal_nuevo);
+                    properties.setProperty("ciudad", ciudad_nuevo);
+                    properties.setProperty("provincia", provincia_nuevo);
+                    properties.setProperty("pais", pais_nuevo);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                try (FileOutputStream output = new FileOutputStream(ficheroDatosPersonales)) {
+                    properties.store(output, null);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
