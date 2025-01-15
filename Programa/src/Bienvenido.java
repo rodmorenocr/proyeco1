@@ -3,8 +3,8 @@ import javax.swing.JOptionPane;
 
 public class Bienvenido extends javax.swing.JFrame {
 
-    String nombres[] = {"evamorenocr","marorthat", "rodmorenocr", "jospedlop", "jose", "dani", "hecbarcre"};
-    String claves[] = {"0000","amarillo", "0000", "amarillo", "amarillo", "123", "amarillo"};
+    String nombres[] = {"danjimfra","marorthat", "rodmorcru", "jospedlop", "hecbarcre", "dani", "jose"};
+    String claves[] = {"Verde1","Verde1", "Verde1", "Verde1", "Verde1", "123", "123"};
     public static String nombreUsuario;
     
 //...
