@@ -15,8 +15,33 @@ public class Menu extends javax.swing.JDialog {
 
        if (nombreUsuario.equals("dani"))
         {
-            fotoUsuario = "usuarios/dani/Foto_persona2.png";
+            fotoUsuario = "usuarios/dani/1.jpg";
+        } 
+        else if (nombreUsuario.equals("marorthat")) 
+        {
+            fotoUsuario = "usuarios/marorthat/1.jpg";
+        } 
+        else if (nombreUsuario.equals("danjimfra")) 
+        {
+            fotoUsuario = "usuarios/danjimfra/1.jpg";
+        } 
+        else if (nombreUsuario.equals("rodmorcru")) 
+        {
+            fotoUsuario = "usuarios/rodmorcru/1.jpg";
+        } 
+        else if (nombreUsuario.equals("jospedlop")) 
+        {
+            fotoUsuario = "usuarios/jospedlop/1.jpg";
+        } 
+        else if (nombreUsuario.equals("jose")) 
+        {
+            fotoUsuario = "usuarios/jose/1.jpg";
+        } 
+        else if (nombreUsuario.equals("hecbarcre")) 
+        {
+            fotoUsuario = "usuarios/hecbarcre/1.jpg";
         }
+
 
         setLocationRelativeTo(null);
         this.setTitle("Menú principal");
@@ -196,7 +221,7 @@ public class Menu extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Foto_persona3.png")));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user.png")));
         
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
