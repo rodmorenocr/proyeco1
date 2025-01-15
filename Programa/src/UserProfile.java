@@ -2,6 +2,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
+import javax.swing.JOptionPane;
+
 
 public class UserProfile extends javax.swing.JDialog {
 
@@ -32,8 +34,37 @@ public class UserProfile extends javax.swing.JDialog {
         }
         else if (nombreUsuario.equals("marorthat")) 
         {
-            leer_ficheros("Programa\\src\\usuarios\\marorthat\\datos.property");
+            leer_ficheros("Programa\\src\\usuarios\\marorthat\\datos.properties");
+            ficheroDatosPersonales = "Programa\\src\\usuarios\\marorthat\\datos.properties";
         }
+        else if (nombreUsuario.equals("rodmorcru")) 
+        {
+            leer_ficheros("Programa\\src\\usuarios\\rodmorcru\\datos.properties");
+            ficheroDatosPersonales = "Programa\\src\\usuarios\\rodmorcru\\datos.properties";
+        }
+        else if (nombreUsuario.equals("danjimfra")) 
+        {
+            leer_ficheros("Programa\\src\\usuarios\\danjimfra\\datos.properties");
+            ficheroDatosPersonales = "Programa\\src\\usuarios\\danjimfra\\datos.properties";
+        }
+        else if (nombreUsuario.equals("jospedlop")) 
+        {
+            leer_ficheros("Programa\\src\\usuarios\\jospedlop\\datos.properties");
+            ficheroDatosPersonales = "Programa\\src\\usuarios\\jospedlop\\datos.properties";
+        }
+        else if (nombreUsuario.equals("jose")) 
+        {
+            leer_ficheros("Programa\\src\\usuarios\\jose\\datos.properties");
+            ficheroDatosPersonales = "Programa\\src\\usuarios\\jose\\datos.properties";
+        }
+        else if (nombreUsuario.equals("hecbarcre")) 
+        {
+            leer_ficheros("Programa\\src\\usuarios\\hecbarcre\\datos.properties");
+            ficheroDatosPersonales = "Programa\\src\\usuarios\\hecbarcre\\datos.properties";
+        }
+
+
+
 
         jTextPane1.setText(apellido);
         jScrollPane1.setViewportView(jTextPane1);
@@ -451,6 +482,9 @@ public class UserProfile extends javax.swing.JDialog {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+                JOptionPane.showMessageDialog(null, "Datos guardados correctamente", "Mensaje", 
+                                           JOptionPane.INFORMATION_MESSAGE);
             }
         });
 
