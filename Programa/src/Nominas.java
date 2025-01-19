@@ -3,9 +3,16 @@ import java.awt.Color;
 
 
 public class Nominas extends javax.swing.JDialog {
+    // Variables de la clase Nominas
+    static String nombreUsuario = "";
+    
+
+    
+
 
     // Constructor de la clase Nominas
     public Nominas(java.awt.Frame parent, boolean modal) {
+        
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
@@ -14,6 +21,7 @@ public class Nominas extends javax.swing.JDialog {
 
     // Método para inicializar los componentes del formulario
     private void initComponents() {
+        nombreUsuario = Bienvenido.nombreUsuario;
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -133,8 +141,8 @@ public class Nominas extends javax.swing.JDialog {
                 jButton10ActionPerformed(evt);
             }
         });
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_de_persona.png")));
+        
+        
 
         // Configuración del layout del panel secundario
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -191,6 +199,13 @@ public class Nominas extends javax.swing.JDialog {
         );
 
         //jLabel3.setIcon(null);
+        switch (nombreUsuario) {
+            case "dani", "danjimfra" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/1.jpg")));
+            case "jose", "jospedlop" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/1.jpg")));
+            case "marorthat" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/1.jpg")));
+            case "rodmorcru" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/1.jpg")));
+            default -> throw new IllegalArgumentException("Unexpected value: " + nombreUsuario);
+        }
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel4.setText("Recibo de nóminas");
@@ -313,8 +328,9 @@ private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {
 }
 private void jTree1TreeExpanded(javax.swing.event.TreeExpansionEvent evt) {                                    
     // TODO add your handling code here:
+    nombreUsuario = Bienvenido.nombreUsuario;
     
-    jLabel3.setText("Seleccione una nómina para cargar.");
+    jLabel3.setText(""+nombreUsuario+" seleccione una nómina para cargar.");
 
 }                                   
 
@@ -322,19 +338,62 @@ private void jTree1ValueChanged(javax.swing.event.TreeSelectionEvent evt) {
     // Obtén el nodo seleccionado
     javax.swing.tree.DefaultMutableTreeNode selectedNode = 
         (javax.swing.tree.DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
-
+        nombreUsuario = Bienvenido.nombreUsuario;
     if (selectedNode != null) {
         // Verifica el nombre del nodo o cualquier otra propiedad
         String nodeName = selectedNode.toString();
         if (nodeName.equals("Nómina Diciembre")) {
-            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Nomina2.png")));
-            
-        } else if(nodeName.equals("Nómina Octubre")){
+            switch (nombreUsuario) {
+                case "dani":
+                case "danjimfra":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/Nomina_Daniel1.png")));
+                    break;
+                case "jose":
+                case "jospedlop":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/Nomina_Jose1.png")));
+                    break;
+                case "marorthat":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/Nomina_Maria1.png")));
+                    break;
+                case "rodmorcru":
+                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/Nomina.png")));// Add appropriate action for "rodmorcru" if needed
+                    break;               
+            }
+         }else if(nodeName.equals("Nómina Octubre")){
             // Puedes manejar otros nodos aquí
-            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Calendario.png")));
+            switch (nombreUsuario) {
+                case "dani":
+                case "danjimfra":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/Nomina_Daniel2.png")));
+                    break;
+                case "jose":
+                case "jospedlop":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/Nomina_Jose2.png")));
+                    break;
+                case "marorthat":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/Nomina_Maria2.png")));
+                    break;
+                case "rodmorcru":
+                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/Nomina1.png")));// Add appropriate action for "rodmorcru" if needed
+                    break;               
+            }
         }else if(nodeName.equals("Nómina Noviembre")){
-            // Puedes manejar otros nodos aquí
-            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Nomina1.png")));
+            switch (nombreUsuario) {
+                case "dani":
+                case "danjimfra":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/Nomina_Daniel3.png")));
+                    break;
+                case "jose":
+                case "jospedlop":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/Nomina_Jose3.png")));
+                    break;
+                case "marorthat":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/Nomina_Maria3.png")));
+                    break;
+                case "rodmorcru":
+                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/Nomina2.png")));// Add appropriate action for "rodmorcru" if needed
+                    break;               
+            }
         }
     }
 }     

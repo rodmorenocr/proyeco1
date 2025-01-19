@@ -3,7 +3,7 @@ import javax.swing.JLabel;
 
 
 public class Horario extends javax.swing.JDialog {
-
+    static String nombreUsuario = "";
     // Constructor de la clase Nominas
     public Horario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -16,6 +16,7 @@ public class Horario extends javax.swing.JDialog {
 
     // Método para inicializar los componentes del formulario
     private void initComponents() {
+        nombreUsuario = Bienvenido.nombreUsuario;
         timeLabel = new JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -144,7 +145,13 @@ public class Horario extends javax.swing.JDialog {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_de_persona.png")));
+        switch (nombreUsuario) {
+            case "dani", "danjimfra" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/1.jpg")));
+            case "jose", "jospedlop" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/1.jpg")));
+            case "marorthat" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/1.jpg")));
+            case "rodmorcru" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/1.jpg")));
+            default -> throw new IllegalArgumentException("Unexpected value: " + nombreUsuario);
+        }
         // Configuración del layout del panel secundario
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
