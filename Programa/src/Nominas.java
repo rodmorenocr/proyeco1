@@ -93,9 +93,9 @@ public class Nominas extends javax.swing.JDialog {
         jButton5.setText("Mis nóminas");
 
         jButton6.setForeground(Color.white);
-        jButton6.setBackground(new java.awt.Color(102, 102, 102));
+        jButton6.setBackground(new java.awt.Color(153, 204, 255)); // Light blue color
         jButton6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton6.setText("Mi horario");
+        jButton6.setText("Descargar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -308,8 +308,8 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
     // TODO add your handling code aquí:
 }
 private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
-    Horario mihorario = new Horario((java.awt.Frame) null, false);
-        mihorario.setVisible(true);
+    Descarga_archivos descargarArchivosApp = new Descarga_archivos((java.awt.Frame) null, false);
+    descargarArchivosApp.setVisible(true);
 }
 private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
     JCalendar1 vacacionesApp = new JCalendar1();
