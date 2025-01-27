@@ -1,10 +1,13 @@
 
 import java.awt.Color;
+import javax.lang.model.util.ElementScanner14;
 
 
 public class Nominas extends javax.swing.JDialog {
     // Variables de la clase Nominas
     static String nombreUsuario = "";
+    private boolean arbol_expandido = false;
+    private int arbol_seleccionado = 0;
     
 
     
@@ -21,6 +24,9 @@ public class Nominas extends javax.swing.JDialog {
 
     // Método para inicializar los componentes del formulario
     private void initComponents() {
+        boolean arbol_expandido = false;
+        int arbol_seleccionado = 0;
+        
         nombreUsuario = Bienvenido.nombreUsuario;
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -308,8 +314,75 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
     // TODO add your handling code aquí:
 }
 private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
-    Descarga_archivos descargarArchivosApp = new Descarga_archivos((java.awt.Frame) null, false);
-    descargarArchivosApp.setVisible(true);
+    String message = "Nomina descargada en el escritorio";
+    
+        if( !arbol_expandido){// Si no hay un nodo seleccionado
+            message = "No hay ninguna nomina seleccionada para la descarga.";
+            jLabel3.setText("<html><div style='text-align: center;'>" + message + "</div></html>");
+           
+            
+        }else if(arbol_seleccionado==1){// Si hay un nodo seleccionado
+            message = "Nomina de Diciembre descargada en el escritorio";
+            java.awt.Image image = ((javax.swing.ImageIcon) jLabel3.getIcon()).getImage();
+            java.awt.image.BufferedImage bufferedImage = new java.awt.image.BufferedImage(image.getWidth(null), image.getHeight(null), java.awt.image.BufferedImage.TYPE_INT_ARGB);
+            java.awt.Graphics2D g2 = bufferedImage.createGraphics();
+            g2.drawImage(image, 0, 0, null);
+            g2.dispose();
+            try {
+                java.io.File outputfile = new java.io.File(System.getProperty("%USERNAME%") + "/Desktop/nomina_diciembre.png");
+                javax.imageio.ImageIO.write(bufferedImage, "png", outputfile);
+            } catch (java.io.IOException e) {
+                e.printStackTrace();
+            }
+            Descarga_archivos ventanaSolicitud = new Descarga_archivos(message);// Create a new instance of Descarga_archivos
+            ventanaSolicitud.setBounds(0, 0, 290, 200); // Tamaño de la ventana
+            ventanaSolicitud.setVisible(true); // Hacer visible la ventana
+            ventanaSolicitud.setResizable(false); // No se puede redimensionar la ventana
+            ventanaSolicitud.setLocationRelativeTo(null); // Centrar la ventana
+            this.setVisible(false); // Ocultar la ventana actual
+        }else if(arbol_seleccionado==2){// Si hay un nodo seleccionado
+            java.awt.Image image = ((javax.swing.ImageIcon) jLabel3.getIcon()).getImage();
+            java.awt.image.BufferedImage bufferedImage = new java.awt.image.BufferedImage(image.getWidth(null), image.getHeight(null), java.awt.image.BufferedImage.TYPE_INT_ARGB);
+            java.awt.Graphics2D g2 = bufferedImage.createGraphics();
+            g2.drawImage(image, 0, 0, null);
+            g2.dispose();
+            try {
+                java.io.File outputfile = new java.io.File(System.getProperty("user.home") + "/Desktop/nomina_octubre.png");
+                javax.imageio.ImageIO.write(bufferedImage, "png", outputfile);
+            } catch (java.io.IOException e) {
+                e.printStackTrace();
+            }
+            message = "Nomina de Octubre descargada en el escritorio";
+            Descarga_archivos ventanaSolicitud = new Descarga_archivos(message);// Create a new instance of Descarga_archivos
+            ventanaSolicitud.setBounds(0, 0, 290, 200); // Tamaño de la ventana
+            ventanaSolicitud.setVisible(true); // Hacer visible la ventana
+            ventanaSolicitud.setResizable(false); // No se puede redimensionar la ventana
+            ventanaSolicitud.setLocationRelativeTo(null); // Centrar la ventana
+            this.setVisible(false); // Ocultar la ventana actual}
+        
+        }else if(arbol_seleccionado==3){// Si hay un nodo seleccionado
+            java.awt.Image image = ((javax.swing.ImageIcon) jLabel3.getIcon()).getImage();
+            java.awt.image.BufferedImage bufferedImage = new java.awt.image.BufferedImage(image.getWidth(null), image.getHeight(null), java.awt.image.BufferedImage.TYPE_INT_ARGB);
+            java.awt.Graphics2D g2 = bufferedImage.createGraphics();
+            g2.drawImage(image, 0, 0, null);
+            g2.dispose();
+            try {
+                java.io.File outputfile = new java.io.File(System.getProperty("user.home") + "/Desktop/nomina_octubre.png");
+                javax.imageio.ImageIO.write(bufferedImage, "png", outputfile);
+            } catch (java.io.IOException e) {
+                e.printStackTrace();
+            }
+            message = "Nomina de Noviembre descargada en el escritorio";
+            Descarga_archivos ventanaSolicitud = new Descarga_archivos(message);// Create a new instance of Descarga_archivos
+            ventanaSolicitud.setBounds(0, 0, 290, 200); // Tamaño de la ventana
+            ventanaSolicitud.setVisible(true); // Hacer visible la ventana
+            ventanaSolicitud.setResizable(false); // No se puede redimensionar la ventana
+            ventanaSolicitud.setLocationRelativeTo(null); // Centrar la ventana
+            this.setVisible(false); // Ocultar la ventana actual}
+        }
+        
+
+    
 }
 private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
     JCalendar1 vacacionesApp = new JCalendar1();
@@ -329,8 +402,8 @@ private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {
 private void jTree1TreeExpanded(javax.swing.event.TreeExpansionEvent evt) {                                    
     // TODO add your handling code here:
     nombreUsuario = Bienvenido.nombreUsuario;
-    
-    jLabel3.setText(""+nombreUsuario+" seleccione una nómina para cargar.");
+     arbol_expandido = false;
+    jLabel3.setText("<html><div style='text-align: center;'>" +nombreUsuario+" seleccione una nómina para visualizar."+"</div></html>");
 
 }                                   
 
@@ -340,9 +413,12 @@ private void jTree1ValueChanged(javax.swing.event.TreeSelectionEvent evt) {
         (javax.swing.tree.DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
         nombreUsuario = Bienvenido.nombreUsuario;
     if (selectedNode != null) {
+    arbol_expandido = true;
         // Verifica el nombre del nodo o cualquier otra propiedad
         String nodeName = selectedNode.toString();
         if (nodeName.equals("Nómina Diciembre")) {
+        arbol_seleccionado = 1;
+
             switch (nombreUsuario) {
                 case "dani":
                 case "danjimfra":
@@ -360,6 +436,7 @@ private void jTree1ValueChanged(javax.swing.event.TreeSelectionEvent evt) {
                     break;               
             }
          }else if(nodeName.equals("Nómina Octubre")){
+            arbol_seleccionado = 2;
             // Puedes manejar otros nodos aquí
             switch (nombreUsuario) {
                 case "dani":
@@ -378,6 +455,7 @@ private void jTree1ValueChanged(javax.swing.event.TreeSelectionEvent evt) {
                     break;               
             }
         }else if(nodeName.equals("Nómina Noviembre")){
+            arbol_seleccionado = 3;
             switch (nombreUsuario) {
                 case "dani":
                 case "danjimfra":
