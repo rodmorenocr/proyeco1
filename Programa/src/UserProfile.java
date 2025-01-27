@@ -417,7 +417,7 @@ public class UserProfile extends javax.swing.JDialog {
         );
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel4.setText("Eva García López");
+        jLabel4.setText("Datos personales");
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_Cabezera.png"))); // NOI18N
 
@@ -497,36 +497,6 @@ public class UserProfile extends javax.swing.JDialog {
                 setVisible(false);
             }
         });
-
-        /*jTextPane1.setText("García López");
-        jScrollPane1.setViewportView(jTextPane1);
-
-        jTextPane2.setText(nombre);
-        jScrollPane2.setViewportView(jTextPane2);
-
-        jTextPane3.setText("Manager Ventas");
-        jScrollPane3.setViewportView(jTextPane3);
-
-        jTextPane4.setText("eva.lopez@auraboutique.es");
-        jScrollPane4.setViewportView(jTextPane4);
-
-        jTextPane5.setText("+349100001201");
-        jScrollPane5.setViewportView(jTextPane5);
-
-        jTextPane6.setText("C/ Valparaiso");
-        jScrollPane6.setViewportView(jTextPane6);
-
-        jTextPane7.setText("28123");
-        jScrollPane7.setViewportView(jTextPane7);
-
-        jTextPane8.setText("Madrid");
-        jScrollPane8.setViewportView(jTextPane8);
-
-        jTextPane9.setText("Madrid");
-        jScrollPane9.setViewportView(jTextPane9);
-
-        jTextPane10.setText("España");
-        jScrollPane10.setViewportView(jTextPane10);*/
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_de_persona.png"))); // NOI18N
         jLabel3.setText("ICON");
