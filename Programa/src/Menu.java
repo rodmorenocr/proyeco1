@@ -489,7 +489,7 @@ public class Menu extends javax.swing.JDialog {
                 .addGap(23, 23, 23))
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Captura de pantalla 2024-11-10 182825.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Foto_Cabezera.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
