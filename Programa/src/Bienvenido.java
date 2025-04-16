@@ -6,7 +6,7 @@ public class Bienvenido extends javax.swing.JFrame {
     String nombres[] = {"danjimfra","marorthat", "rodmorcru", "jospedlop", "hecbarcre", "dani", "jose"};
     String claves[] = {"Verde1","Verde1", "Verde1", "Verde1", "Verde1", "123", "123"};
     public static String nombreUsuario;
-    
+
 //...
 
     /** //test para commit JLP
@@ -161,10 +161,21 @@ public class Bienvenido extends javax.swing.JFrame {
 
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {
         
-        String nombre = jTextFieldNombre.getText();
+        nombreUsuario = jTextFieldNombre.getText();
         String clave = jTextFieldPassword.getText();
-        boolean encontrado = false;   
+        boolean encontrado = Conector.cargarUsuario(nombreUsuario, clave);   
+        if (encontrado) {
+            Menu menu = new Menu( this, false);
+                menu.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "Comprobación", JOptionPane.ERROR_MESSAGE);
+        }
 
+
+
+
+
+/*/
         for (int i = 0; i < nombres.length; i++) 
         {
             if (nombres[i].equals(nombre) && claves[i].equals(clave))
@@ -178,7 +189,7 @@ public class Bienvenido extends javax.swing.JFrame {
         if (!encontrado) 
         {
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "Comprobación", JOptionPane.ERROR_MESSAGE);
-        }
+        }*/
     }
     
                                                    

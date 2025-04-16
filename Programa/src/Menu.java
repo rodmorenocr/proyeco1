@@ -1,7 +1,7 @@
 public class Menu extends javax.swing.JDialog {
 
     public static String fotoUsuario = "";
-    String nombreUsuario = "";
+    //String nombreUsuario = "";
 
     /**
      * Creates new form Menu
@@ -10,34 +10,34 @@ public class Menu extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 
-        nombreUsuario = Bienvenido.nombreUsuario;
-        System.out.println("valor variable nombre: " + nombreUsuario);
+        //nombreUsuario = Bienvenido.nombreUsuario;
+        System.out.println("valor variable nombre: " + Bienvenido.nombreUsuario);
 
-       if (nombreUsuario.equals("dani"))
+       if (Bienvenido.nombreUsuario.equals("dani"))
         {
             fotoUsuario = "usuarios/dani/1.jpg";
         } 
-        else if (nombreUsuario.equals("marorthat")) 
+        else if (Bienvenido.nombreUsuario.equals("marorthat")) 
         {
             fotoUsuario = "usuarios/marorthat/1.jpg";
         } 
-        else if (nombreUsuario.equals("danjimfra")) 
+        else if (Bienvenido.nombreUsuario.equals("danjimfra")) 
         {
             fotoUsuario = "usuarios/danjimfra/1.jpg";
         } 
-        else if (nombreUsuario.equals("rodmorcru")) 
+        else if (Bienvenido.nombreUsuario.equals("rodmorcru")) 
         {
             fotoUsuario = "usuarios/rodmorcru/1.jpg";
         } 
-        else if (nombreUsuario.equals("jospedlop")) 
+        else if (Bienvenido.nombreUsuario.equals("jospedlop")) 
         {
             fotoUsuario = "usuarios/jospedlop/1.jpg";
         } 
-        else if (nombreUsuario.equals("jose")) 
+        else if (Bienvenido.nombreUsuario.equals("jose")) 
         {
             fotoUsuario = "usuarios/jose/1.jpg";
         } 
-        else if (nombreUsuario.equals("hecbarcre")) 
+        else if (Bienvenido.nombreUsuario.equals("hecbarcre")) 
         {
             fotoUsuario = "usuarios/hecbarcre/1.jpg";
         }
