@@ -11,27 +11,22 @@ import java.sql.Statement;
  * Contiene los métodos genéricos para consultas utilizadas en la gestión y uso de la bd
  */
 public class Conector {
-    //variables para conexión y ubilicación del fichero de la base de datos
-    //public static String cadenaBd = "Programa\\src\\ficheros\\auraBoutique.db";
+
     //objeto conexión
     static Connection conecto;   
    
-    /**
-     * Método para conectarnos con la base de datos SQLite.
-     */
+    // Método para conectarnos con la base de datos SQLite.
     public static Connection abrir(){
         conecto = null;
         try {
             //Carga el Driver de sqlite
             Class.forName("org.sqlite.JDBC");
             conecto  = DriverManager.getConnection("jdbc:sqlite:Programa\\src\\ficheros\\auraBoutique.db");
-            //conecto  = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\dani\\\\datos.properties");
             System.out.print("Conexión abierta ... ");
         } catch (ClassNotFoundException ex1) {
             ex1.printStackTrace();
         } catch (SQLException ex2) {
             ex2.printStackTrace();
-            //System.out.println("Excepción: SQLException" + ex2.getMessage());
         }
        
         return conecto;
