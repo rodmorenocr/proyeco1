@@ -1,7 +1,8 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "Programa/lib/jcalendar-1.4.jar"
+        "Programa/lib/jcalendar-1.4.jar",
+        "Programa/lib/sqlite-jdbc-3.49.1.0.jar"
     ],
     "java.project.sourcePaths": [
         "Programa/src",
