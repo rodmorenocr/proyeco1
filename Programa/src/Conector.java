@@ -46,7 +46,11 @@ public class Conector {
         }
     }
 
-    // Método para cargar el usuario
+
+    /* 
+     *  Método para comprobar que el usuario es correcto y que recoge los datos personales en las variables 
+     *  declaradas en la clase Menú 
+     */
     public static boolean cargarUsuario(String nombreUsuario, String contrasenia) {
         boolean hecho = false;
         ResultSet rs = null;
@@ -59,6 +63,7 @@ public class Conector {
             int contador = 0;
             while (rs.next()) {
                 contador++;
+                Menu.dnib = rs.getString("dni");
                 Menu.nombreb = rs.getString("nombre");
                 Menu.apellidob = rs.getString("apellido");
                 Menu.puestob = rs.getString("puesto");
@@ -88,7 +93,23 @@ public class Conector {
 
     }
 
-    
-
-
+    /*
+     * Método para guardar los cambios realizados en los campos de datos personales en la base de datos
+     */
+    public static boolean modificaUsuario(String nombre, String apellido, String mail, String puesto, String telefono, String direccion, String codigoPostal, String ciudad, String provincia, String pais){
+        boolean hecho = false;
+        try {
+            Conector.abrir();
+            Statement statemento = conecto.createStatement();
+            int telefonoInt = Integer.parseInt(telefono);
+            int codigoPostalInt = Integer.parseInt(codigoPostal);
+            statemento.executeUpdate("UPDATE Usuario SET nombre = '" + nombre + "', apellido = '" + apellido + "', mail = '" + mail + "', puesto = '" + puesto + "', telefono = '" + telefonoInt + "', direccion = '" + direccion + "', codigoPostal = '" + codigoPostalInt + "', ciudad = '" + ciudad + "', provincia = '" + provincia + "', pais = '" + pais + "' WHERE dni = '" + Menu.dnib + "';");
+            hecho = true;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            hecho = false;
+        }
+        Conector.cerrar();
+        return hecho;
+    }
 }

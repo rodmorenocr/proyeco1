@@ -395,9 +395,8 @@ public class UserProfile extends javax.swing.JDialog {
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 
-                
-                
-                /*jButton21ActionPerformed(evt);
+                             
+                jButton21ActionPerformed(evt);
                 //recogemos los datos
                 String nombre_nuevo = jTextPane2.getText();
                 String apellido_nuevo = jTextPane1.getText();
@@ -410,32 +409,8 @@ public class UserProfile extends javax.swing.JDialog {
                 String provincia_nuevo = jTextPane9.getText();
                 String pais_nuevo = jTextPane10.getText();
 
-                Properties properties = new Properties();
-                try (FileInputStream input = new FileInputStream(ficheroDatosPersonales)) {
-                    properties.load(input);
-                    properties.setProperty("nombre", nombre_nuevo);
-                    properties.setProperty("apellidos", apellido_nuevo);
-                    properties.setProperty("email", email_nuevo);
-                    properties.setProperty("puesto", puesto_nuevo);
-                    properties.setProperty("telefono", telefono_nuevo);
-                    properties.setProperty("direccion", direccion_nuevo);
-                    properties.setProperty("codigo_postal", codigoPostal_nuevo);
-                    properties.setProperty("ciudad", ciudad_nuevo);
-                    properties.setProperty("provincia", provincia_nuevo);
-                    properties.setProperty("pais", pais_nuevo);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                try (FileOutputStream output = new FileOutputStream(ficheroDatosPersonales)) {
-                    properties.store(output, null);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                JOptionPane.showMessageDialog(null, "Datos guardados correctamente", "Mensaje", 
-                                           JOptionPane.INFORMATION_MESSAGE);*/
+                boolean comprobacion = Conector.modificaUsuario(nombre_nuevo, apellido_nuevo, email_nuevo, puesto_nuevo, telefono_nuevo, direccion_nuevo, codigoPostal_nuevo, ciudad_nuevo, provincia_nuevo, pais_nuevo);
+                System.out.println(comprobacion);
             }
         });
 
