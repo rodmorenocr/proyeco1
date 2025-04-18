@@ -293,9 +293,10 @@ private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
 private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
     
 }
-private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
+/*private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
     // TODO add your handling code aquí:
-}
+}*/
+
 private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
     String message = "Nomina descargada en el escritorio";
     
