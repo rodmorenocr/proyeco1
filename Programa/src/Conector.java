@@ -59,6 +59,16 @@ public class Conector {
             int contador = 0;
             while (rs.next()) {
                 contador++;
+                Menu.nombreb = rs.getString("nombre");
+                Menu.apellidob = rs.getString("apellido");
+                Menu.puestob = rs.getString("puesto");
+                Menu.emailb = rs.getString("mail");
+                Menu.telefonob = rs.getInt("telefono");
+                Menu.direccionb = rs.getString("direccion");
+                Menu.codigoPostalb = rs.getInt("codigoPostal");
+                Menu.ciudadb = rs.getString("ciudad");
+                Menu.provinciab = rs.getString("provincia");
+                Menu.paisb = rs.getString("pais");
             }
             if (contador == 1) {
                 hecho = true;
@@ -77,6 +87,8 @@ public class Conector {
         return hecho;
 
     }
+
+    
 
 
 }

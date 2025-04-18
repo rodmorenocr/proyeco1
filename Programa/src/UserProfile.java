@@ -7,93 +7,41 @@ import javax.swing.JOptionPane;
 
 public class UserProfile extends javax.swing.JDialog {
 
-    static String nombreUsuario = "";
-    static String nombre = "";
-    static String apellido = "";
-    static String email = "";
-    static String puesto = "";
-    static String telefono = "";
-    static String direccion = "";
-    static String codigoPostal = "";
-    static String ciudad = "";
-    static String provincia = "";
-    static String pais = "";
-
-    String ficheroDatosPersonales = "";
-
-  
+      
     public UserProfile(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
 
-        nombreUsuario = Bienvenido.nombreUsuario;
-        if (nombreUsuario.equals("dani"))
-        {
-            leer_ficheros("Programa\\src\\usuarios\\dani\\datos.properties");
-            ficheroDatosPersonales = "Programa\\src\\usuarios\\dani\\datos.properties";
-        }
-        else if (nombreUsuario.equals("marorthat")) 
-        {
-            leer_ficheros("Programa\\src\\usuarios\\marorthat\\datos.properties");
-            ficheroDatosPersonales = "Programa\\src\\usuarios\\marorthat\\datos.properties";
-        }
-        else if (nombreUsuario.equals("rodmorcru")) 
-        {
-            leer_ficheros("Programa\\src\\usuarios\\rodmorcru\\datos.properties");
-            ficheroDatosPersonales = "Programa\\src\\usuarios\\rodmorcru\\datos.properties";
-        }
-        else if (nombreUsuario.equals("danjimfra")) 
-        {
-            leer_ficheros("Programa\\src\\usuarios\\danjimfra\\datos.properties");
-            ficheroDatosPersonales = "Programa\\src\\usuarios\\danjimfra\\datos.properties";
-        }
-        else if (nombreUsuario.equals("jospedlop")) 
-        {
-            leer_ficheros("Programa\\src\\usuarios\\jospedlop\\datos.properties");
-            ficheroDatosPersonales = "Programa\\src\\usuarios\\jospedlop\\datos.properties";
-        }
-        else if (nombreUsuario.equals("jose")) 
-        {
-            leer_ficheros("Programa\\src\\usuarios\\jose\\datos.properties");
-            ficheroDatosPersonales = "Programa\\src\\usuarios\\jose\\datos.properties";
-        }
-        else if (nombreUsuario.equals("hecbarcre")) 
-        {
-            leer_ficheros("Programa\\src\\usuarios\\hecbarcre\\datos.properties");
-            ficheroDatosPersonales = "Programa\\src\\usuarios\\hecbarcre\\datos.properties";
-        }
-
-
-
-
-        jTextPane1.setText(apellido);
+        jTextPane1.setText(Menu.apellidob);
         jScrollPane1.setViewportView(jTextPane1);
 
-        jTextPane2.setText(nombre);
+        jTextPane2.setText(Menu.nombreb);
         jScrollPane2.setViewportView(jTextPane2);
 
-        jTextPane3.setText(puesto);
+        jTextPane3.setText(Menu.puestob);
         jScrollPane3.setViewportView(jTextPane3);
 
-        jTextPane4.setText(email);
+        jTextPane4.setText(Menu.emailb);
         jScrollPane4.setViewportView(jTextPane4);
 
-        jTextPane5.setText(telefono);
+        String telefonoInt = String.valueOf(Menu.telefonob);
+        jTextPane5.setText(telefonoInt);
         jScrollPane5.setViewportView(jTextPane5);
 
-        jTextPane6.setText(direccion);
+        jTextPane6.setText(Menu.direccionb);
         jScrollPane6.setViewportView(jTextPane6);
 
-        jTextPane7.setText(codigoPostal);
+        String cpInt = String.valueOf(Menu.codigoPostalb);
+        jTextPane7.setText(cpInt);
         jScrollPane7.setViewportView(jTextPane7);
 
-        jTextPane8.setText(ciudad);
+        jTextPane8.setText(Menu.ciudadb);
         jScrollPane8.setViewportView(jTextPane8);
 
-        jTextPane9.setText(provincia);
+        jTextPane9.setText(Menu.provinciab);
         jScrollPane9.setViewportView(jTextPane9);
 
-        jTextPane10.setText(pais);
+        jTextPane10.setText(Menu.paisb);
         jScrollPane10.setViewportView(jTextPane10);
 
 
@@ -446,7 +394,10 @@ public class UserProfile extends javax.swing.JDialog {
         jButton21.setText("Guardar");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+                
+                
+                
+                /*jButton21ActionPerformed(evt);
                 //recogemos los datos
                 String nombre_nuevo = jTextPane2.getText();
                 String apellido_nuevo = jTextPane1.getText();
@@ -484,7 +435,7 @@ public class UserProfile extends javax.swing.JDialog {
                 }
 
                 JOptionPane.showMessageDialog(null, "Datos guardados correctamente", "Mensaje", 
-                                           JOptionPane.INFORMATION_MESSAGE);
+                                           JOptionPane.INFORMATION_MESSAGE);*/
             }
         });
 
@@ -703,42 +654,6 @@ public class UserProfile extends javax.swing.JDialog {
         // TODO add your handling code aquí:
         setVisible(false);
         dispose();
-    }
-
-    public static void leer_ficheros(String ubicacionFichero)
-    {
-        Properties propiedades = new Properties();
-        try (FileInputStream entrada = new FileInputStream(ubicacionFichero)) {
-            // Cargar las propiedades desde el fichero
-            propiedades.load(entrada);
-
-            // Obtener las propiedades
-            nombre = propiedades.getProperty("nombre");
-            apellido = propiedades.getProperty("apellidos");
-            email = propiedades.getProperty("email");
-            puesto = propiedades.getProperty("puesto");
-            telefono = propiedades.getProperty("telefono");
-            direccion = propiedades.getProperty("direccion");
-            codigoPostal = propiedades.getProperty("codigo_postal");
-            ciudad = propiedades.getProperty("ciudad");
-            provincia = propiedades.getProperty("provincia");
-            pais = propiedades.getProperty("pais");
-
-            System.out.println("Nombre: " + nombre);
-            System.out.println("Apellidos: " + apellido);
-            System.out.println("Email: " + email);
-            System.out.println("Puesto: " + puesto);
-            System.out.println("Telefono: " + telefono);
-            System.out.println("Dirección: " + direccion);
-            System.out.println("Código postal: " + codigoPostal);
-            System.out.println("Ciudad: " + ciudad);
-            System.out.println("Provincia: " + provincia);
-            System.out.println("País: " + pais);
-
-        } catch (IOException e) {
-            System.out.println("Fichero no encontrado");
-            //e.printStackTrace();
-        }
     }
 
 

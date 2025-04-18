@@ -2,6 +2,17 @@ public class Menu extends javax.swing.JDialog {
 
     public static String fotoUsuario = "";
     //String nombreUsuario = "";
+    public static String dnib;
+    public static String nombreb = null;
+    public static String apellidob;
+    public static String emailb;
+    public static String puestob;
+    public static int telefonob;
+    public static String direccionb;
+    public static int codigoPostalb;
+    public static String ciudadb;
+    public static String provinciab;
+    public static String paisb;
 
     /**
      * Creates new form Menu
@@ -9,11 +20,9 @@ public class Menu extends javax.swing.JDialog {
     public Menu(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        System.out.println("valor nombre: " + Menu.nombreb);
 
-        //nombreUsuario = Bienvenido.nombreUsuario;
-        System.out.println("valor variable nombre: " + Bienvenido.nombreUsuario);
-
-       fotoUsuario = ("usuarios/" + Bienvenido.nombreUsuario + "/1.jpg");
+        fotoUsuario = ("usuarios/" + Bienvenido.nombreUsuario + "/1.jpg");
 
         setLocationRelativeTo(null);
         this.setTitle("Menú principal");
