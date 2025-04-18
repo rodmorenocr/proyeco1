@@ -392,6 +392,9 @@ private void Mostrar_tiempo() {
     jLabel1.setText(String.format(horas_totales));
 }
 
+/*
+ * Método que toma la fecha actual del sistema y la pasa a tipo String
+ */
 private String fecha_sistema(){
     String fecha_actual = "";
     LocalDate ahora = LocalDate.now();
@@ -400,6 +403,9 @@ private String fecha_sistema(){
     return fecha_actual;
 }
 
+/*
+ * Método que toma la hora del sistema y la convierte a formato hh:mm:ss
+ */
 private String hora_sistema(){
     String hora_a_devolver = "";
     LocalDateTime locaDate = LocalDateTime.now();
