@@ -416,66 +416,22 @@ private void jTree1ValueChanged(javax.swing.event.TreeSelectionEvent evt) {
     arbol_expandido = true;
         // Verifica el nombre del nodo o cualquier otra propiedad
         String nodeName = selectedNode.toString();
+        String ruta = "";
         if (nodeName.equals("Nómina Diciembre")) {
-        arbol_seleccionado = 1;
-            String ruta1 = Conector.consultaNominaMes(Menu.dnib, 12, 2024);
-            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta1)));
+            arbol_seleccionado = 1;
+            ruta = Conector.consultaNominaMes(Menu.dnib, 12, 2024);
+            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta)));
        
-            /*switch (nombreUsuario) {
-                case "dani":
-                case "danjimfra":
-                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/Nomina_Daniel1.png")));
-                    break;
-                case "jose":
-                case "jospedlop":
-                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/Nomina_Jose1.png")));
-                    break;
-                case "marorthat":
-                    //jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/Nomina_Maria1.png")));
-                    String ruta1 = Conector.consultaNominaMes(Menu.dnib, 12, 2024);
-                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta1)));
-                    break;
-                case "rodmorcru":
-                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/Nomina.png")));// Add appropriate action for "rodmorcru" if needed
-                    break;               
-            }*/
          }else if(nodeName.equals("Nómina Octubre")){
             arbol_seleccionado = 2;
+            ruta = Conector.consultaNominaMes(Menu.dnib, 10, 2024);
+            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta)));
             // Puedes manejar otros nodos aquí
-            switch (nombreUsuario) {
-                case "dani":
-                case "danjimfra":
-                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/Nomina_Daniel2.png")));
-                    break;
-                case "jose":
-                case "jospedlop":
-                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/Nomina_Jose2.png")));
-                    break;
-                case "marorthat":
-                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/Nomina_Maria2.png")));
-                    break;
-                case "rodmorcru":
-                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/Nomina1.png")));// Add appropriate action for "rodmorcru" if needed
-                    break;               
-            }
+
         }else if(nodeName.equals("Nómina Noviembre")){
             arbol_seleccionado = 3;
-            switch (nombreUsuario) {
-                case "dani":
-                case "danjimfra":
-                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/Nomina_Daniel3.png")));
-                    break;
-                case "jose":
-                case "jospedlop":
-                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/Nomina_Jose3.png")));
-                    break;
-                case "marorthat":
-                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/Nomina_Maria3.png")));
-                    break;
-                case "rodmorcru":
-                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/Nomina2.png")));// Add appropriate action for "rodmorcru" if needed
-                    break;               
-            }
+            ruta = Conector.consultaNominaMes(Menu.dnib, 11, 2024);
+            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta)));
         }
     }
 }     
