@@ -1,15 +1,16 @@
 
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
 public class Bienvenido extends javax.swing.JFrame {
 
+    public static ArrayList<String []> arrayUsuario;
     String nombres[] = {"danjimfra","marorthat", "rodmorcru", "jospedlop", "hecbarcre", "dani", "jose"};
     String claves[] = {"Verde1","Verde1", "Verde1", "Verde1", "Verde1", "123", "123"};
     public static String nombreUsuario;
 
-//...
 
-    /** //test para commit JLP
+    /** /
      * Creates new form Bienvenido
      */
     public Bienvenido() {
@@ -18,8 +19,6 @@ public class Bienvenido extends javax.swing.JFrame {
         this.setTitle("Aura Boutique - Inicio");
     }
 
-// rodrigo moreno
-    //rodrigo moreno
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,10 +28,6 @@ public class Bienvenido extends javax.swing.JFrame {
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code"> 
     
-
-
-
-
 
     private void initComponents() {
 
@@ -170,37 +165,15 @@ public class Bienvenido extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "Comprobación", JOptionPane.ERROR_MESSAGE);
         }
+    }                                         
 
-
-
-
-
-/*/
-        for (int i = 0; i < nombres.length; i++) 
-        {
-            if (nombres[i].equals(nombre) && claves[i].equals(clave))
-            {
-                encontrado = true;
-                nombreUsuario = nombre;
-                Menu menu = new Menu( this, false);
-                menu.setVisible(true);
-            }
-        }
-        if (!encontrado) 
-        {
-            JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos", "Comprobación", JOptionPane.ERROR_MESSAGE);
-        }*/
-    }
     
-                                                   
-
     private void jButtonSALIRActionPerformed(java.awt.event.ActionEvent evt) {                                             
         System.exit(0);
     }                                            
 
-    /**
-     * @param args the command line arguments
-     */
+    
+    // @param args the command line arguments
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButtonIngresar;
     private javax.swing.JButton jButtonSALIR;

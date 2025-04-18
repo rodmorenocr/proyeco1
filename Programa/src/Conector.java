@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+
 //import java.sql.PreparedStatement;
 
 /*
@@ -54,6 +55,7 @@ public class Conector {
             Conector.abrir();
             Statement statemento = conecto.createStatement();
             rs = statemento.executeQuery("SELECT * FROM Usuario WHERE userName = '" + nombreUsuario + "' AND password = '" + contrasenia + "';");
+
             int contador = 0;
             while (rs.next()) {
                 contador++;

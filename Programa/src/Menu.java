@@ -13,35 +13,7 @@ public class Menu extends javax.swing.JDialog {
         //nombreUsuario = Bienvenido.nombreUsuario;
         System.out.println("valor variable nombre: " + Bienvenido.nombreUsuario);
 
-       if (Bienvenido.nombreUsuario.equals("dani"))
-        {
-            fotoUsuario = "usuarios/dani/1.jpg";
-        } 
-        else if (Bienvenido.nombreUsuario.equals("marorthat")) 
-        {
-            fotoUsuario = "usuarios/marorthat/1.jpg";
-        } 
-        else if (Bienvenido.nombreUsuario.equals("danjimfra")) 
-        {
-            fotoUsuario = "usuarios/danjimfra/1.jpg";
-        } 
-        else if (Bienvenido.nombreUsuario.equals("rodmorcru")) 
-        {
-            fotoUsuario = "usuarios/rodmorcru/1.jpg";
-        } 
-        else if (Bienvenido.nombreUsuario.equals("jospedlop")) 
-        {
-            fotoUsuario = "usuarios/jospedlop/1.jpg";
-        } 
-        else if (Bienvenido.nombreUsuario.equals("jose")) 
-        {
-            fotoUsuario = "usuarios/jose/1.jpg";
-        } 
-        else if (Bienvenido.nombreUsuario.equals("hecbarcre")) 
-        {
-            fotoUsuario = "usuarios/hecbarcre/1.jpg";
-        }
-
+       fotoUsuario = ("usuarios/" + Bienvenido.nombreUsuario + "/1.jpg");
 
         setLocationRelativeTo(null);
         this.setTitle("Menú principal");
