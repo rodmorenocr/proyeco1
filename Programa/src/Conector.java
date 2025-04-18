@@ -1,4 +1,3 @@
-import java.lang.Thread.State;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -34,7 +33,6 @@ public class Conector {
         return conecto;
     }
    
-   
     /*
      * Método para cerrar la conexión con la base de datos
      */
@@ -46,7 +44,6 @@ public class Conector {
             System.out.println("Excepción: SQLException" + ex.getMessage());
         }
     }
-
 
     /* 
      *  Método para comprobar que el usuario es correcto y que recoge los datos personales en las variables 
@@ -131,7 +128,6 @@ public class Conector {
         } catch (SQLException ex) {
             System.out.println("Excepción: SQLException" + ex.getMessage());
         }
-        
 
         return rutaNomina;
     }
