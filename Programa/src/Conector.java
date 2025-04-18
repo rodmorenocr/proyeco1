@@ -132,4 +132,22 @@ public class Conector {
         return rutaNomina;
     }
 
+    /*
+     * Método para realizar las inserciones del tiempo de jornada laboral
+     */
+    public static void insertarHoras(String dni, String fecha, String horaInicio, String horaFin, String horas) {
+        Conector.abrir();
+        try {
+            Statement statemento = conecto.createStatement();
+            statemento.executeUpdate("INSERT INTO RegistroHoras (dni, fecha, hora_inicio, hora_fin, total_horas) VALUES ('" + dni + "', '" + fecha + "', '" + horaInicio + "', '" + horaFin + "', '" + horas + "');");
+            System.out.println("correcto el insert");
+            Conector.cerrar();
+
+        } catch (SQLException ex) {
+            System.out.println("Excepción: SQLException" + ex.getMessage());
+            Conector.cerrar();
+        }
+
+    }
+
 }

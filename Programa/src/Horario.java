@@ -1,9 +1,16 @@
 import java.awt.Color;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import javax.swing.JLabel;
 
 
 public class Horario extends javax.swing.JDialog {
     static String nombreUsuario = "";
+    public String hora_entrada = "";
+    public String hora_salida = "";
+    public String horas_totales = "";
+
     // Constructor de la clase Nominas
     public Horario(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -145,13 +152,8 @@ public class Horario extends javax.swing.JDialog {
             }
         });
 
-        switch (nombreUsuario) {
-            case "dani", "danjimfra" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/1.jpg")));
-            case "jose", "jospedlop" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/1.jpg")));
-            case "marorthat" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/1.jpg")));
-            case "rodmorcru" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/1.jpg")));
-            default -> throw new IllegalArgumentException("Unexpected value: " + nombreUsuario);
-        }
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(Menu.fotoUsuario)));
+        
         // Configuración del layout del panel secundario
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -205,25 +207,25 @@ public class Horario extends javax.swing.JDialog {
                 .addComponent(jButton10)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        // Inicializamos los timerer
+        
+        // Inicializamos los timer
         timer2 = new javax.swing.Timer(1000, new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Mostrar_tiempo();
             }
-            
         });
+
         timer = new javax.swing.Timer(1000, new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateTime();
-                
             }
-            
         });
+
         jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel4.setText("Horario de trabajo");
 
         Mostrar_tiempo.setBackground(new java.awt.Color(255, 153, 153));
-        Mostrar_tiempo.setText("Mostrar tiempo facturado");
+        Mostrar_tiempo.setText("Jornada laboral: ");
         
 
         Iniciar_jornada.setBackground(new java.awt.Color(102, 204, 255));
@@ -352,46 +354,66 @@ private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {
     setVisible(false);
         dispose(); 
 }
-private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {                                          
+/*private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {                                          
     // TODO add your handling code here:
 }                                         
 
 private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {                                          
     // TODO add your handling code here:
-} 
+} */
       
 private void Iniciar_jornada(java.awt.event.ActionEvent evt) {                                          
     startTime = System.currentTimeMillis();
-    
+    hora_entrada = hora_sistema();
     timer2.start();
 }        
+
 private void Finalizar_jornada(java.awt.event.ActionEvent evt) {                                          
     timer2.stop();
+    hora_salida = hora_sistema();
     accumulatedTime += System.currentTimeMillis() - startTime;
+    String fecha = fecha_sistema();
+    Conector.insertarHoras(Menu.dnib, fecha, hora_entrada, hora_salida, horas_totales); 
 }        
+
 private void updateTime() {
     java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("HH:mm:ss");
     String currentTime = sdf.format(new java.util.Date());
     timeLabel.setText(currentTime);
-    
 }
+
 private void Mostrar_tiempo() {
     
     long elapsedTime = System.currentTimeMillis() - startTime + accumulatedTime;;
     long hours = (elapsedTime / 3600000) % 24;
     long minutes = (elapsedTime / 60000) % 60;
     long seconds = (elapsedTime / 1000) % 60;
-    jLabel1.setText(String.format("%02d:%02d:%02d", hours, minutes, seconds));
+    horas_totales = String.format("%02d:%02d:%02d", hours, minutes, seconds);
+    jLabel1.setText(String.format(horas_totales));
 }
 
+private String fecha_sistema(){
+    String fecha_actual = "";
+    LocalDate ahora = LocalDate.now();
+    fecha_actual = ahora.toString();
+    System.out.println(fecha_actual);
+    return fecha_actual;
+}
 
-
-
+private String hora_sistema(){
+    String hora_a_devolver = "";
+    LocalDateTime locaDate = LocalDateTime.now();
+    int hours  = locaDate.getHour();
+    int minutes = locaDate.getMinute();
+    int seconds = locaDate.getSecond();
+    System.out.println("Hora actual : " + hours  + ":"+ minutes +":"+seconds); 
+    hora_a_devolver = hours  + ":"+ minutes +":"+seconds;
+    return hora_a_devolver;
+}   
 
 /**
  * @param args the command line arguments
  */
-
 
 // Variables declaration - do not modify
     private javax.swing.JButton jButton1;
@@ -414,7 +436,7 @@ private void Mostrar_tiempo() {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel timeLabel;
-    private javax.swing.JLabel timeLabel2;
+    //private javax.swing.JLabel timeLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
