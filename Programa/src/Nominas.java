@@ -418,8 +418,10 @@ private void jTree1ValueChanged(javax.swing.event.TreeSelectionEvent evt) {
         String nodeName = selectedNode.toString();
         if (nodeName.equals("Nómina Diciembre")) {
         arbol_seleccionado = 1;
-
-            switch (nombreUsuario) {
+            String ruta1 = Conector.consultaNominaMes(Menu.dnib, 12, 2024);
+            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta1)));
+       
+            /*switch (nombreUsuario) {
                 case "dani":
                 case "danjimfra":
                     jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/Nomina_Daniel1.png")));
@@ -429,12 +431,14 @@ private void jTree1ValueChanged(javax.swing.event.TreeSelectionEvent evt) {
                     jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/Nomina_Jose1.png")));
                     break;
                 case "marorthat":
-                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/Nomina_Maria1.png")));
+                    //jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/Nomina_Maria1.png")));
+                    String ruta1 = Conector.consultaNominaMes(Menu.dnib, 12, 2024);
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta1)));
                     break;
                 case "rodmorcru":
                 jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/Nomina.png")));// Add appropriate action for "rodmorcru" if needed
                     break;               
-            }
+            }*/
          }else if(nodeName.equals("Nómina Octubre")){
             arbol_seleccionado = 2;
             // Puedes manejar otros nodos aquí

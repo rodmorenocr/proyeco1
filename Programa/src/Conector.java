@@ -1,3 +1,4 @@
+import java.lang.Thread.State;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -112,4 +113,27 @@ public class Conector {
         Conector.cerrar();
         return hecho;
     }
+
+
+    /*
+     * Método que devuelve la ruta a la nómina buscada
+     */
+    public static String consultaNominaMes(String dni, int mes, int anio) {
+        String rutaNomina = "";
+        try {
+            
+            Conector.abrir();
+            Statement statemento = conecto.createStatement();
+            ResultSet rs = statemento.executeQuery("SELECT * FROM Nomina WHERE dni = '" + dni + "' AND mes = '" + mes + "' AND anio = '" + anio + "';");
+            while(rs.next()){
+                rutaNomina = rs.getString("archivo");
+            }
+        } catch (SQLException ex) {
+            System.out.println("Excepción: SQLException" + ex.getMessage());
+        }
+        
+
+        return rutaNomina;
+    }
+
 }
