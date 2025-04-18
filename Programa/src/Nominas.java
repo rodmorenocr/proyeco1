@@ -1,17 +1,11 @@
 
 import java.awt.Color;
-import javax.lang.model.util.ElementScanner14;
-
 
 public class Nominas extends javax.swing.JDialog {
     // Variables de la clase Nominas
     static String nombreUsuario = "";
     private boolean arbol_expandido = false;
     private int arbol_seleccionado = 0;
-    
-
-    
-
 
     // Constructor de la clase Nominas
     public Nominas(java.awt.Frame parent, boolean modal) {
@@ -24,8 +18,8 @@ public class Nominas extends javax.swing.JDialog {
 
     // Método para inicializar los componentes del formulario
     private void initComponents() {
-        boolean arbol_expandido = false;
-        int arbol_seleccionado = 0;
+        //boolean arbol_expandido = false;
+        //int arbol_seleccionado = 0;
         
         nombreUsuario = Bienvenido.nombreUsuario;
         jPanel1 = new javax.swing.JPanel();
@@ -147,8 +141,6 @@ public class Nominas extends javax.swing.JDialog {
                 jButton10ActionPerformed(evt);
             }
         });
-        
-        
 
         // Configuración del layout del panel secundario
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -205,13 +197,7 @@ public class Nominas extends javax.swing.JDialog {
         );
 
         //jLabel3.setIcon(null);
-        switch (nombreUsuario) {
-            case "dani", "danjimfra" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/1.jpg")));
-            case "jose", "jospedlop" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/1.jpg")));
-            case "marorthat" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/1.jpg")));
-            case "rodmorcru" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/1.jpg")));
-            default -> throw new IllegalArgumentException("Unexpected value: " + nombreUsuario);
-        }
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(Menu.fotoUsuario)));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel4.setText("Recibo de nóminas");
@@ -255,8 +241,6 @@ public class Nominas extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(jTree1);
 
-    
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -294,7 +278,6 @@ public class Nominas extends javax.swing.JDialog {
                         .addContainerGap(12, Short.MAX_VALUE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
-
 
 getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 pack();
@@ -380,8 +363,6 @@ private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
             ventanaSolicitud.setLocationRelativeTo(null); // Centrar la ventana
             this.setVisible(false); // Ocultar la ventana actual}
         }
-        
-
     
 }
 private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -436,11 +417,9 @@ private void jTree1ValueChanged(javax.swing.event.TreeSelectionEvent evt) {
     }
 }     
 
-
 /**
  * @param args the command line arguments
  */
-
 
 // Variables declaration - do not modify
 private javax.swing.JButton jButton1;
@@ -464,5 +443,3 @@ private javax.swing.JTextField jTextField2;
 private javax.swing.JTree jTree1;
 // End of variables declaration
 }
-
-
