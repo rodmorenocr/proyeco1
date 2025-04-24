@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 public class JCalendar2 extends JDialog {
 
     private JCalendar jcFecha;
-    private JButton jbAceptar, jbLimpiar, jbAhora;
+    private JButton jbAceptar, jbLimpiar; //jbAhora;
     private int dia, mes, year, diaSemana, hora, minutos;
     String nombreDia, nombreMes, horaCadena, minutosCadena, fechaCompleta, horaCompleta;
     boolean selecciono;
