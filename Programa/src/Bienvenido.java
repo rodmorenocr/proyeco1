@@ -1,14 +1,29 @@
 
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Bienvenido extends javax.swing.JFrame {
 
-    public static ArrayList<String []> arrayUsuario;
+
+
+    /*public static ArrayList<String []> arrayUsuario;
     String nombres[] = {"danjimfra","marorthat", "rodmorcru", "jospedlop", "hecbarcre", "dani", "jose"};
     String claves[] = {"Verde1","Verde1", "Verde1", "Verde1", "Verde1", "123", "123"};
+    public static String nombreUsuario;*/
+
+    private static final HashMap<String, String> usuarios = new HashMap<>();
     public static String nombreUsuario;
 
+    static {
+        usuarios.put("danjimfra", "Verde1");
+        usuarios.put("marorthat", "Verde1");
+        usuarios.put("rodmorcru", "Verde1");
+        usuarios.put("jospedlop", "Verde1");
+        usuarios.put("hecbarcre", "Verde1");
+        usuarios.put("dani", "123");
+        usuarios.put("jose", "123");
+    }
 
     /** /
      * Creates new form Bienvenido
