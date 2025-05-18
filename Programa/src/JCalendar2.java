@@ -63,7 +63,7 @@ public class JCalendar2 extends JDialog {
         selecciono = false;
     }
     
-    public void crearGUI(){
+    private void crearGUI(){
         // crear el JDialog
         setSize(315, 330);
         setDefaultCloseOperation(HIDE_ON_CLOSE);
@@ -89,7 +89,7 @@ public class JCalendar2 extends JDialog {
         });
         add(jbAceptar);
        
-        
+       
         jbLimpiar = new JButton("Volver");
         jbLimpiar.setBounds(195, 248, 85, 25);// Ubicar y agregar al panel
         jbLimpiar.addActionListener(new ActionListener() {
@@ -149,7 +149,16 @@ public class JCalendar2 extends JDialog {
 	    case 12: nombreMes = "Diciembre"; 	break;
     	}	
     }	
-            
+
+    public void setFecha(int tipo) {
+        fechaCompleta = switch (tipo) {
+            case 1 -> String.format("%02d/%02d/%04d", dia, mes, year);
+            case 2 -> String.format("%04d/%02d/%02d", year, mes, dia);
+            case 3 -> String.format("%02d/%02d/%04d", mes, dia, year);
+            default -> "FORMATO INVALIDO";
+        };
+    }
+   /*        
     public void setFecha(int tipo){
         fechaCompleta = "";
         switch (tipo) {
@@ -184,7 +193,7 @@ public class JCalendar2 extends JDialog {
                 fechaCompleta = "FORMATO INVALIDO";
         }        
     }
-    
+  */  
     
     public int getDia(){ return dia; }
     public int getMes(){ return mes; }

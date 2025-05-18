@@ -322,6 +322,8 @@ public class Horario extends javax.swing.JDialog {
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
+
+        
 }
 // Acción del botón 2
 private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
