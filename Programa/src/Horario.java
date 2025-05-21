@@ -6,10 +6,7 @@ import javax.swing.JLabel;
 
 
 public class Horario extends javax.swing.JDialog {
-    static String nombreUsuario = "";
-    public String hora_entrada = "";
-    public String hora_salida = "";
-    public String horas_totales = "";
+    static String nombreUsuario,hora_entrada,hora_salida,horas_totales;   
 
     // Constructor de la clase Nominas
     public Horario(java.awt.Frame parent, boolean modal) {
@@ -48,7 +45,7 @@ public class Horario extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
         timeLabel = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        
+    
         // Configuración de la ventana
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setIconImages(getIconImages());
@@ -105,13 +102,9 @@ public class Horario extends javax.swing.JDialog {
             }
         });
 
-        
-        
         jButton6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jButton6.setText("Mi horario");
         
-        
-
         jButton7.setForeground(Color.white);
         jButton7.setBackground(new java.awt.Color(102, 102, 102));
         jButton7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N

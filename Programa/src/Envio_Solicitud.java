@@ -8,6 +8,20 @@ public class Envio_Solicitud extends JFrame {
 
     public Envio_Solicitud(){
 
+        setTitle("Solicitud Enviada");
+        setLayout(new BorderLayout());
+        setSize(300, 200);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        jLabel = new JLabel("Solicitud Enviada", SwingConstants.CENTER);
+        jLabel.setFont(new Font("Andale Mono", Font.BOLD, 12));
+        add(jLabel, BorderLayout.CENTER);
+
+        jlabel5 = new JLabel("©2017 Aura Boutique Company", SwingConstants.CENTER);
+        jlabel5.setFont(new Font("Andale Mono", Font.BOLD, 12));
+        add(jlabel5, BorderLayout.SOUTH);
+/*
         setLayout(null);
         jLabel = new JLabel("Solicitud Enviada");
         jLabel.setBounds(80,50,100,30);
@@ -21,5 +35,6 @@ public class Envio_Solicitud extends JFrame {
         jlabel5.setForeground(new Color(0, 0, 0));
         add(jlabel5);
 
-    }
+    }*/
+}
 }

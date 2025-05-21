@@ -18,7 +18,11 @@ public class Conector {
    
     // Método para conectarnos con la base de datos SQLite.
     public static Connection abrir(){
-        conecto = null;
+
+        if (conecto != null) {
+            return conecto;
+        }
+
         try {
             //Carga el Driver de sqlite
             Class.forName("org.sqlite.JDBC");
@@ -28,22 +32,28 @@ public class Conector {
             ex1.printStackTrace();
         } catch (SQLException ex2) {
             ex2.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-       
         return conecto;
     }
-   
-    /*
-     * Método para cerrar la conexión con la base de datos
-     */
-    public static void cerrar(){
-        try{
+/*
+ * Método para cerrar la conexión con la base de datos
+ */
+public static void cerrar(){
+
+    if (conecto != null) {
+        try {
             conecto.close();
             System.out.println("Conexión cerrada ..... ");
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             System.out.println("Excepción: SQLException" + ex.getMessage());
+        } finally {
+            conecto = null;
+        
         }
     }
+}
 
     /* 
      *  Método para comprobar que el usuario es correcto y que recoge los datos personales en las variables 
