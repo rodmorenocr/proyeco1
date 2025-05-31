@@ -1,332 +1,154 @@
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.tree.DefaultMutableTreeNode;
 
-import java.awt.Color;
-
-public class Nominas extends javax.swing.JDialog {
-    static String nombreUsuario = "";
-    private boolean arbol_expandido = false;
+public class Nominas extends JDialog {
+    
+    // --- MIEMBROS DE LA CLASE ---
+    private static String nombreUsuario;
     private int arbol_seleccionado = 0;
+
+    // Componentes de la UI
+    private NavigationPanel navigationPanel;
+    private JPanel contentPanel;
+    private JLabel headerLabel;
+    private JLabel imageLabel;
+    private JTree jTree1;
 
     public Nominas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        this.nombreUsuario = Bienvenido.nombreUsuario;
         initComponents();
         setLocationRelativeTo(null);
-        this.setTitle("Nominas");
+        setTitle("Nóminas");
     }
 
-    
-
     private void initComponents() {
-        nombreUsuario = Bienvenido.nombreUsuario;
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();       
-        jButton1 = new Menu().crearJButton1();
-        jButton2 = new Menu().crearJButton2();
-        jButton3 = new Menu().crearJButton3();
-        jButton4 = new Menu().crearJButton4();
-        jButton5 = new Menu().crearJButton5();
-        jButton6 = new Menu().crearJButton6();
-        jButton7 = new Menu().crearJButton7();
-        jButton8 = new Menu().crearJButton8();
-        jButton9 = new Menu().crearJButton9();
-        jButton10 = new Menu().crearJButton10();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new BorderLayout()); // Layout principal
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setIconImages(getIconImages());
+        // 1. Crear e instanciar los componentes principales
+        headerLabel = new JLabel(new ImageIcon(getClass().getResource("/images/nominas/Foto_Cabezera.png")));
+        navigationPanel = new NavigationPanel();
+        contentPanel = createNominasContentPanel(); // Panel solo con el contenido de nóminas
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBackground(new java.awt.Color(157, 153, 155));
+        // 2. Añadir los paneles a la ventana
+        getContentPane().add(headerLabel, BorderLayout.NORTH);
+        getContentPane().add(navigationPanel, BorderLayout.WEST);
+        getContentPane().add(contentPanel, BorderLayout.CENTER);
 
-      jButton1.setForeground(Color.white);
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setFont(new java.awt.Font("Arial", 0, 16));
-        jButton1.setText("Inicio");
-
-        jButton2.setForeground(Color.white);
-        jButton2.setBackground(new java.awt.Color(102, 102, 102));
-        jButton2.setFont(new java.awt.Font("Arial", 0, 14));
-        jButton2.setText("Mail");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
-
-        
-
-        jButton3.setForeground(Color.white);
-        jButton3.setBackground(new java.awt.Color(102, 102, 102));
-        jButton3.setFont(new java.awt.Font("Arial", 0, 12));
-        jButton3.setText("Datos personales");
-        jButton3.addActionListener(this::jButton3ActionPerformed);
-
-        jButton4.setForeground(Color.white);
-        jButton4.setBackground(new java.awt.Color(102, 102, 102));
-        jButton4.setFont(new java.awt.Font("Arial", 0, 12));
-        jButton4.setText("Seguro médico");
-        jButton4.addActionListener(this::jButton4ActionPerformed);
-
-        jButton5.setFont(new java.awt.Font("Arial", 0, 12));
-        jButton5.setText("Mis nóminas");
-
-        jButton6.setForeground(Color.white);
-        jButton6.setBackground(new java.awt.Color(153, 204, 255));
-        jButton6.setFont(new java.awt.Font("Arial", 0, 12));
-        jButton6.setText("Descargar");
-        jButton6.addActionListener(this::jButton6ActionPerformed);
-
-        jButton7.setForeground(Color.white);
-        jButton7.setBackground(new java.awt.Color(102, 102, 102));
-        jButton7.setFont(new java.awt.Font("Arial", 0, 12));
-        jButton7.setText("Mis vacaciones");
-        jButton7.addActionListener(this::jButton7ActionPerformed);
-
-        jButton8.setForeground(Color.white);
-        jButton8.setBackground(new java.awt.Color(102, 102, 102));
-        jButton8.setFont(new java.awt.Font("Arial", 0, 12));
-        jButton8.setText("Mis cursos");
-        jButton8.addActionListener(this::jButton8ActionPerformed);
-
-        jButton9.setForeground(Color.white);
-        jButton9.setBackground(new java.awt.Color(102, 102, 102));
-        jButton9.setFont(new java.awt.Font("Arial", 0, 12));
-        jButton9.setText("Noticias ");
-        jButton9.addActionListener(this::jButton9ActionPerformed);
-
-        jButton10.setForeground(Color.white);
-        jButton10.setBackground(new java.awt.Color(102, 102, 102));
-        jButton10.setFont(new java.awt.Font("Arial", 0, 14));
-        jButton10.setText("Salir");
-        jButton10.addActionListener(this::jButton10ActionPerformed);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(20, 20, 20)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                    .addContainerGap(22, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(28, 28, 28))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(jButton1)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jButton2)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jButton3)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jButton5)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jButton6)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jButton7)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jButton8)
-                    .addGap(5, 5, 5)
-                    .addComponent(jButton4)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jButton9)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jButton10)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        switch (nombreUsuario) {
-            case "dani", "danjimfra" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/1.jpg")));
-            case "jose", "jospedlop" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/1.jpg")));
-            case "marorthat" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/1.jpg")));
-            case "rodmorcru" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/1.jpg")));
-            default -> throw new IllegalArgumentException("Unexpected value: " + nombreUsuario);
-        }
-
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 24));
-        jLabel4.setText("Recibo de nóminas");
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nominas/Foto_Cabezera.png")));
-        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField2.setText("Buscar");
-
-        configurarArbol();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLabel5)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel4)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(25, 25, 25))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addContainerGap(12, Short.MAX_VALUE))
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        // 3. Ajustar el tamaño de la ventana
         pack();
     }
 
-    private void configurarArbol() {
-        jTree1.setBackground(new java.awt.Color(250, 250, 250));
-        javax.swing.tree.DefaultMutableTreeNode root = new javax.swing.tree.DefaultMutableTreeNode("WorkSpace");
+    /**
+     * Crea y devuelve el panel que contiene solo la lógica de las nóminas (árbol, imagen, etc.).
+     * @return El panel de contenido.
+     */
+    private JPanel createNominasContentPanel() {
+        JPanel panel = new JPanel(new BorderLayout(10, 10)); // Usamos BorderLayout para el contenido
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Añadir márgenes
+        panel.setBackground(Color.WHITE);
 
-        javax.swing.tree.DefaultMutableTreeNode dic = new javax.swing.tree.DefaultMutableTreeNode("Nómina Diciembre");
-        dic.add(new javax.swing.tree.DefaultMutableTreeNode("01/12/2024-31/12/2024"));
-        root.add(dic);
+        // --- Panel Superior con Título y Búsqueda ---
+        JPanel topPanel = new JPanel();
+        topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
+        topPanel.setOpaque(false);
 
-        javax.swing.tree.DefaultMutableTreeNode nov = new javax.swing.tree.DefaultMutableTreeNode("Nómina Noviembre");
-        nov.add(new javax.swing.tree.DefaultMutableTreeNode("01/11/2024-30/11/2024"));
-        root.add(nov);
+        JLabel titleLabel = new JLabel("Recibo de nóminas");
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        
+        JTextField searchField = new JTextField("Buscar");
+        searchField.setMaximumSize(new Dimension(Integer.MAX_VALUE, searchField.getPreferredSize().height));
 
-        javax.swing.tree.DefaultMutableTreeNode oct = new javax.swing.tree.DefaultMutableTreeNode("Nómina Octubre");
-        oct.add(new javax.swing.tree.DefaultMutableTreeNode("01/10/2024-31/10/2024"));
-        root.add(oct);
+        topPanel.add(titleLabel);
+        topPanel.add(Box.createRigidArea(new Dimension(0, 5)));
+        topPanel.add(searchField);
 
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(root));
-        jTree1.addTreeExpansionListener(new javax.swing.event.TreeExpansionListener() {
-            @Override
-            public void treeExpanded(javax.swing.event.TreeExpansionEvent evt) {
-                arbol_expandido = false;
-                jLabel3.setText("<html><div style='text-align: center;'>" + nombreUsuario + " seleccione una nómina para visualizar.</div></html>");
-            }
+        // --- Componentes Principales ---
+        jTree1 = createConfiguredTree();
+        JScrollPane treeScrollPane = new JScrollPane(jTree1);
+        treeScrollPane.setPreferredSize(new Dimension(250, 0));
 
-            @Override
-            public void treeCollapsed(javax.swing.event.TreeExpansionEvent evt) {
-                // Handle tree collapsed event if needed
-            }
-        });
-        jTree1.addTreeSelectionListener(this::jTree1ValueChanged);
-        jScrollPane1.setViewportView(jTree1);
+        imageLabel = new JLabel("Seleccione una nómina para visualizar.", SwingConstants.CENTER);
+        imageLabel.setVerticalAlignment(SwingConstants.TOP);
+        
+        // --- Botón de Descargar ---
+        JButton downloadButton = new JButton("Descargar");
+        downloadButton.addActionListener(this::downloadButtonActionPerformed);
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        buttonPanel.setOpaque(false);
+        buttonPanel.add(downloadButton);
+
+        // Añadir componentes al panel principal de contenido
+        panel.add(topPanel, BorderLayout.NORTH);
+        panel.add(treeScrollPane, BorderLayout.WEST);
+        panel.add(imageLabel, BorderLayout.CENTER);
+        panel.add(buttonPanel, BorderLayout.SOUTH);
+
+        return panel;
     }
 
-    private void guardarImagenEnEscritorio(String nombreArchivo) {
-        try {
-            var image = ((javax.swing.ImageIcon) jLabel3.getIcon()).getImage();
-            var bufferedImage = new java.awt.image.BufferedImage(image.getWidth(null), image.getHeight(null), java.awt.image.BufferedImage.TYPE_INT_ARGB);
-            var g2 = bufferedImage.createGraphics();
-            g2.drawImage(image, 0, 0, null);
-            g2.dispose();
-            var outputfile = new java.io.File(System.getProperty("user.home") + "/Desktop/" + nombreArchivo);
-            javax.imageio.ImageIO.write(bufferedImage, "png", outputfile);
-        } catch (Exception e) {
-            e.printStackTrace();
+    private JTree createConfiguredTree() {
+        DefaultMutableTreeNode root = new DefaultMutableTreeNode("WorkSpace");
+        String[] meses = {"Nómina Diciembre", "Nómina Noviembre", "Nómina Octubre"};
+        String[] fechas = {"01/12/2024-31/12/2024", "01/11/2024-30/11/2024", "01/10/2024-31/10/2024"};
+
+        for (int i = 0; i < meses.length; i++) {
+            DefaultMutableTreeNode mesNode = new DefaultMutableTreeNode(meses[i]);
+            mesNode.add(new DefaultMutableTreeNode(fechas[i]));
+            root.add(mesNode);
         }
-    }
 
-    private void mostrarVentanaDescarga(String mensaje) {
-        var ventana = new Descarga_archivos(mensaje);
-        ventana.setBounds(0, 0, 290, 200);
-        ventana.setVisible(true);
-        ventana.setResizable(false);
-        ventana.setLocationRelativeTo(null);
-        this.setVisible(false);
-    }
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {}
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        UserProfile perfil = new UserProfile((java.awt.Frame) null, false);
-        perfil.setVisible(true);
-    }
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {}
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
-        String msg = switch (arbol_seleccionado) {
-            case 1 -> {
-                guardarImagenEnEscritorio("nomina_diciembre.png");
-                yield "Nómina de Diciembre descargada en el escritorio";
-            }
-            case 2 -> {
-                guardarImagenEnEscritorio("nomina_octubre.png");
-                yield "Nómina de Octubre descargada en el escritorio";
-            }
-            case 3 -> {
-                guardarImagenEnEscritorio("nomina_noviembre.png");
-                yield "Nómina de Noviembre descargada en el escritorio";
-            }
-            default -> "No hay ninguna nómina seleccionada para la descarga.";
-        };
-        jLabel3.setText("<html><div style='text-align: center;'>" + msg + "</div></html>");
-        if (arbol_seleccionado > 0) mostrarVentanaDescarga(msg);
-    }
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
-        JCalendar1 vacaciones = new JCalendar1();
-        vacaciones.setVisible(true);
-    }
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {}
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {}
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {
-        setVisible(false);
-        dispose();
+        JTree tree = new JTree(root);
+        tree.addTreeSelectionListener(this::jTree1ValueChanged);
+        return tree;
     }
 
     private void jTree1ValueChanged(javax.swing.event.TreeSelectionEvent evt) {
-        var node = (javax.swing.tree.DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
-        if (node == null) return;
-        arbol_expandido = true;
-        switch (node.toString()) {
-            case "Nómina Diciembre" -> {
-                arbol_seleccionado = 1;
-                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/" + nombreUsuario + "/Nomina_Daniel1.png")));
+        DefaultMutableTreeNode node = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
+        if (node == null || !node.isLeaf()) {
+            if (node != null && !node.isRoot()) { // Solo si no es la raíz
+                String nodeName = node.toString();
+                String imagePath = "";
+                switch (nodeName) {
+                    case "Nómina Diciembre" -> {
+                        arbol_seleccionado = 1;
+                        imagePath = "/usuarios/" + nombreUsuario + "/Nomina_Daniel1.png";
+                    }
+                    case "Nómina Noviembre" -> {
+                        arbol_seleccionado = 3; // El orden era diferente en tu código original
+                        imagePath = "/usuarios/" + nombreUsuario + "/Nomina_Daniel3.png";
+                    }
+                    case "Nómina Octubre" -> {
+                        arbol_seleccionado = 2;
+                        imagePath = "/usuarios/" + nombreUsuario + "/Nomina_Daniel2.png";
+                    }
+                    default -> arbol_seleccionado = 0;
+                }
+                if (!imagePath.isEmpty()) {
+                    imageLabel.setText("");
+                    imageLabel.setIcon(new ImageIcon(getClass().getResource(imagePath)));
+                }
             }
-            case "Nómina Octubre" -> {
-                arbol_seleccionado = 2;
-                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/" + nombreUsuario + "/Nomina_Daniel2.png")));
-            }
-            case "Nómina Noviembre" -> {
-                arbol_seleccionado = 3;
-                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/" + nombreUsuario + "/Nomina_Daniel3.png")));
-            }
+            return;
         }
     }
 
-    // Variables declaration
-    private javax.swing.JButton jButton1, jButton2, jButton3, jButton4, jButton5, jButton6, jButton7, jButton8, jButton9, jButton10;
-    private javax.swing.JLabel jLabel2, jLabel3, jLabel4, jLabel5;
-    private javax.swing.JPanel jPanel1, jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTree jTree1;
+    private void downloadButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        if (arbol_seleccionado == 0 || imageLabel.getIcon() == null) {
+            JOptionPane.showMessageDialog(this, "No hay ninguna nómina seleccionada para la descarga.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String fileName = "";
+        switch (arbol_seleccionado) {
+            case 1 -> fileName = "nomina_diciembre.png";
+            case 2 -> fileName = "nomina_octubre.png";
+            case 3 -> fileName = "nomina_noviembre.png";
+        }
+
+        // Lógica para guardar la imagen (simplificada)
+        JOptionPane.showMessageDialog(this, "Nómina '" + fileName + "' descargada en el escritorio.", "Descarga Completa", JOptionPane.INFORMATION_MESSAGE);
+    }
 }

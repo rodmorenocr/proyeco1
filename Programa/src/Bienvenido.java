@@ -1,8 +1,7 @@
-
 import javax.swing.*;
 import java.util.HashMap;
 
-public class Bienvenido extends javax.swing.JFrame {
+public class Bienvenido extends JFrame {
 
     private static final HashMap<String, String> usuarios = new HashMap<>();
     public static String nombreUsuario;
@@ -22,30 +21,21 @@ public class Bienvenido extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("Aura Boutique - Inicio");
     }
-
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {
         String nombre = jTextFieldNombre.getText();
-        char[] claveChars = jTextFieldPassword.getPassword();
-        String clave = new String(claveChars);
-        
+        String clave = new String(jTextFieldPassword.getPassword());
+
         if (usuarios.containsKey(nombre) && usuarios.get(nombre).equals(clave)) {
             nombreUsuario = nombre;
-            // Replace Menu_simplificado with the correct class name if needed
-            new Menu(this, false).setVisible(true);
+            Menu menuPrincipal = new Menu();
+            menuPrincipal.setVisible(true);
+            this.dispose(); 
         } else {
             JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
-    private void jButtonSALIRActionPerformed(java.awt.event.ActionEvent evt) {
-        System.exit(0);
-    }
-
-    private javax.swing.JLabel jLabel5Imagen;
-
-  
-
-private void initComponents() {
+ 
+    private void initComponents() {
 
         jLabel5Imagen = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -141,7 +131,7 @@ private void initComponents() {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonSALIR, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(14, 14, 14))
         );
@@ -163,14 +153,18 @@ private void initComponents() {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5Imagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel5Imagen, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
         pack();
-    }// </editor-fold>
+    }                       
 
-    // Variables UI
+    private void jButtonSALIRActionPerformed(java.awt.event.ActionEvent evt) {
+        System.exit(0);
+    }
+    
+    private javax.swing.JLabel jLabel5Imagen;
     private javax.swing.JButton jButtonIngresar;
     private javax.swing.JButton jButtonSALIR;
     private javax.swing.JLabel jLabel1;
