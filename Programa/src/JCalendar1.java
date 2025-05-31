@@ -1,11 +1,9 @@
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import javax.swing.*;
 
-
-public class JCalendar1 extends JFrame  {
-
+public class JCalendar1 extends JFrame {
     private JTextField jtFecha;
     private JCalendar2 calFull;
     
@@ -60,12 +58,18 @@ public class JCalendar1 extends JFrame  {
         ventanaSolicitud.setVisible(true);
         this.setVisible(false);
     }
+}
 
 
 
+/* 
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
 
-    /* 
 
+public class JCalendar1 extends JFrame implements ActionListener {
 
     JLabel jlabel1 , jlabel2, jlabel3 ,  jlabel4 ,  jlabelResultado,jlabelImagen ,jlabel5,jlabelCuadro;
     JButton jbSeleccFecha,jbSolitar;
@@ -178,10 +182,10 @@ public class JCalendar1 extends JFrame  {
     private void evento_jbSeleccFecha() {
         calFull.setVisible(true);
         jtFecha.setText(calFull.getFechaCompleta(1));
-    }*/
+    }
     
 }
-    
+    */
  
 
 

@@ -1,5 +1,4 @@
 
-
 import java.awt.Color;
 import javax.lang.model.util.ElementScanner14;
 
@@ -15,20 +14,22 @@ public class Nominas extends javax.swing.JDialog {
         this.setTitle("Nominas");
     }
 
+    
+
     private void initComponents() {
         nombreUsuario = Bienvenido.nombreUsuario;
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();       
+        jButton1 = new Menu().crearJButton1();
+        jButton2 = new Menu().crearJButton2();
+        jButton3 = new Menu().crearJButton3();
+        jButton4 = new Menu().crearJButton4();
+        jButton5 = new Menu().crearJButton5();
+        jButton6 = new Menu().crearJButton6();
+        jButton7 = new Menu().crearJButton7();
+        jButton8 = new Menu().crearJButton8();
+        jButton9 = new Menu().crearJButton9();
+        jButton10 = new Menu().crearJButton10();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -43,7 +44,7 @@ public class Nominas extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBackground(new java.awt.Color(157, 153, 155));
 
-        jButton1.setForeground(Color.white);
+      /* *jButton1.setForeground(Color.white);
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setFont(new java.awt.Font("Arial", 0, 16));
         jButton1.setText("Inicio");
@@ -53,6 +54,8 @@ public class Nominas extends javax.swing.JDialog {
         jButton2.setFont(new java.awt.Font("Arial", 0, 14));
         jButton2.setText("Mail");
         jButton2.addActionListener(this::jButton2ActionPerformed);
+
+        
 
         jButton3.setForeground(Color.white);
         jButton3.setBackground(new java.awt.Color(102, 102, 102));
@@ -97,7 +100,7 @@ public class Nominas extends javax.swing.JDialog {
         jButton10.setBackground(new java.awt.Color(102, 102, 102));
         jButton10.setFont(new java.awt.Font("Arial", 0, 14));
         jButton10.setText("Salir");
-        jButton10.addActionListener(this::jButton10ActionPerformed);
+        jButton10.addActionListener(this::jButton10ActionPerformed);*/
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -269,8 +272,6 @@ public class Nominas extends javax.swing.JDialog {
         perfil.setVisible(true);
     }
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {}
-
-    
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
         String msg = switch (arbol_seleccionado) {
             case 1 -> {
@@ -330,13 +331,18 @@ public class Nominas extends javax.swing.JDialog {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTree jTree1;
 }
-/*import java.awt.Color;
+
+/* 
+import java.awt.Color;
+import javax.lang.model.util.ElementScanner14;
+
 
 public class Nominas extends javax.swing.JDialog {
     // Variables de la clase Nominas
     static String nombreUsuario = "";
     private boolean arbol_expandido = false;
     private int arbol_seleccionado = 0;
+    
 
     // Constructor de la clase Nominas
     public Nominas(java.awt.Frame parent, boolean modal) {
@@ -349,23 +355,22 @@ public class Nominas extends javax.swing.JDialog {
 
     // Método para inicializar los componentes del formulario
     private void initComponents() {
-        //boolean arbol_expandido = false;
-        //int arbol_seleccionado = 0;
+        boolean arbol_expandido = false;
+        int arbol_seleccionado = 0;
         
         nombreUsuario = Bienvenido.nombreUsuario;
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();        jButton1 = new Menu().crearJButton1();
+        jButton2 = new Menu().crearJButton2();
+        jButton3 = new Menu().crearJButton3();
+        jButton4 = new Menu().crearJButton4();
+        jButton5 = new Menu().crearJButton5();
+        jButton6 = new Menu().crearJButton6();
+        jButton7 = new Menu().crearJButton7();
+        jButton8 = new Menu().crearJButton8();
+        jButton9 = new Menu().crearJButton9();
+        jButton10 = new Menu().crearJButton10();
+jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -472,6 +477,8 @@ public class Nominas extends javax.swing.JDialog {
                 jButton10ActionPerformed(evt);
             }
         });
+        
+        
 
         // Configuración del layout del panel secundario
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -528,7 +535,13 @@ public class Nominas extends javax.swing.JDialog {
         );
 
         //jLabel3.setIcon(null);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource(Menu.fotoUsuario)));
+        switch (nombreUsuario) {
+            case "dani", "danjimfra" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/1.jpg")));
+            case "jose", "jospedlop" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/1.jpg")));
+            case "marorthat" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/1.jpg")));
+            case "rodmorcru" -> jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/1.jpg")));
+            default -> throw new IllegalArgumentException("Unexpected value: " + nombreUsuario);
+        }
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel4.setText("Recibo de nóminas");
@@ -572,6 +585,8 @@ public class Nominas extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(jTree1);
 
+    
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -610,6 +625,7 @@ public class Nominas extends javax.swing.JDialog {
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
+
 getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 pack();
 }
@@ -624,10 +640,9 @@ private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
 private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
     
 }
-/*private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
+private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
     // TODO add your handling code aquí:
-}*/
-/* 
+}
 private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
     String message = "Nomina descargada en el escritorio";
     
@@ -695,6 +710,8 @@ private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
             ventanaSolicitud.setLocationRelativeTo(null); // Centrar la ventana
             this.setVisible(false); // Ocultar la ventana actual}
         }
+        
+
     
 }
 private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -721,27 +738,6 @@ private void jTree1TreeExpanded(javax.swing.event.TreeExpansionEvent evt) {
 }                                   
 
 private void jTree1ValueChanged(javax.swing.event.TreeSelectionEvent evt) {
-
-    var node = (javax.swing.tree.DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
-        if (node == null) return;
-        arbol_expandido = true;
-        switch (node.toString()) {
-            case "Nómina Diciembre" -> {
-                arbol_seleccionado = 1;
-                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/" + nombreUsuario + "/Nomina_Daniel1.png")));
-            }
-            case "Nómina Octubre" -> {
-                arbol_seleccionado = 2;
-                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/" + nombreUsuario + "/Nomina_Daniel2.png")));
-            }
-            case "Nómina Noviembre" -> {
-                arbol_seleccionado = 3;
-                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/" + nombreUsuario + "/Nomina_Daniel3.png")));
-            }
-        }
-    }
-
-    /* 
     // Obtén el nodo seleccionado
     javax.swing.tree.DefaultMutableTreeNode selectedNode = 
         (javax.swing.tree.DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
@@ -750,41 +746,73 @@ private void jTree1ValueChanged(javax.swing.event.TreeSelectionEvent evt) {
     arbol_expandido = true;
         // Verifica el nombre del nodo o cualquier otra propiedad
         String nodeName = selectedNode.toString();
-        String ruta = "";
         if (nodeName.equals("Nómina Diciembre")) {
-            arbol_seleccionado = 1;
-            ruta = Conector.consultaNominaMes(Menu.dnib, 12, 2024);
-            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta)));
-       
+        arbol_seleccionado = 1;
+
+            switch (nombreUsuario) {
+                case "dani":
+                case "danjimfra":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/Nomina_Daniel1.png")));
+                    break;
+                case "jose":
+                case "jospedlop":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/Nomina_Jose1.png")));
+                    break;
+                case "marorthat":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/Nomina_Maria1.png")));
+                    break;
+                case "rodmorcru":
+                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/Nomina.png")));// Add appropriate action for "rodmorcru" if needed
+                    break;               
+            }
          }else if(nodeName.equals("Nómina Octubre")){
             arbol_seleccionado = 2;
-            ruta = Conector.consultaNominaMes(Menu.dnib, 10, 2024);
-            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta)));
             // Puedes manejar otros nodos aquí
-
+            switch (nombreUsuario) {
+                case "dani":
+                case "danjimfra":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/Nomina_Daniel2.png")));
+                    break;
+                case "jose":
+                case "jospedlop":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/Nomina_Jose2.png")));
+                    break;
+                case "marorthat":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/Nomina_Maria2.png")));
+                    break;
+                case "rodmorcru":
+                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/Nomina1.png")));// Add appropriate action for "rodmorcru" if needed
+                    break;               
+            }
         }else if(nodeName.equals("Nómina Noviembre")){
             arbol_seleccionado = 3;
-            ruta = Conector.consultaNominaMes(Menu.dnib, 11, 2024);
-            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta)));
+            switch (nombreUsuario) {
+                case "dani":
+                case "danjimfra":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/dani/Nomina_Daniel3.png")));
+                    break;
+                case "jose":
+                case "jospedlop":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/jose/Nomina_Jose3.png")));
+                    break;
+                case "marorthat":
+                    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/marorthat/Nomina_Maria3.png")));
+                    break;
+                case "rodmorcru":
+                jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/usuarios/rodmorcru/Nomina2.png")));// Add appropriate action for "rodmorcru" if needed
+                    break;               
+            }
         }
     }
 }     
 
+
 /**
  * @param args the command line arguments
- */
-
-// Variables declaration - do not modify/* 
-/* 
-    private javax.swing.JButton jButton1, jButton2, jButton3, jButton4, jButton5, jButton6, jButton7, jButton8, jButton9, jButton10;
-    private javax.swing.JLabel jLabel2, jLabel3, jLabel4, jLabel5;
-    private javax.swing.JPanel jPanel1, jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTree jTree1;
+ 
 
 
-/* 
+// Variables declaration - do not modify
 private javax.swing.JButton jButton1;
 private javax.swing.JButton jButton10;
 private javax.swing.JButton jButton2;
@@ -803,7 +831,8 @@ private javax.swing.JPanel jPanel2;
 private javax.swing.JScrollPane jScrollPane1;
 private javax.swing.JLabel jLabel5;
 private javax.swing.JTextField jTextField2;
-private javax.swing.JTree jTree1;*/
+private javax.swing.JTree jTree1;
 // End of variables declaration
-/* 
-}*/
+}
+*/
+
