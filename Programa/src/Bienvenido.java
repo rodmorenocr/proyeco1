@@ -2,12 +2,6 @@
 import javax.swing.*;
 import java.util.HashMap;
 
-// Import Menu_simplificado class if it exists in the same package or another package
-// If Menu_simplificado is in the same package, no import is needed
-// If Menu_simplificado is in another package, for example 'menu', use:
-// import menu.Menu_simplificado;
-
-
 public class Bienvenido extends javax.swing.JFrame {
 
     private static final HashMap<String, String> usuarios = new HashMap<>();
