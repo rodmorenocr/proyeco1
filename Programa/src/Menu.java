@@ -32,7 +32,7 @@ public class Menu extends JFrame {
        this.nombreUsuario = Bienvenido.nombreUsuario;
        System.out.println("Usuario en Menú: " + nombreUsuario);
         // Construye la URL remota 
-        fotoUsuario = "https://auraboutique.info/wp-content/themes/divi-child/usuarios/" + this.nombreUsuario + "/1.jpg";
+        fotoUsuario = "https://auraboutique.info/wp-content/uploads/datos_empleados/usuarios/" + this.nombreUsuario + "/1.jpg";
         initComponents();
     }
 
