@@ -9,6 +9,8 @@ public class Horario extends JDialog {
     private static String nombreUsuario;
     private long startTime;
     private long accumulatedTime = 0;
+    private String horaInicioJornada;
+    private String horaFinJornada;
 
     // Componentes de la UI
     private NavigationPanel navigationPanel;
@@ -109,18 +111,39 @@ public class Horario extends JDialog {
     }
 
     private void startWorkTimer() {
-        if (workTimer != null && workTimer.isRunning()) return; // Evita iniciar múltiples veces
+        if (workTimer != null && workTimer.isRunning()) return;
         startTime = System.currentTimeMillis();
+        // Guarda la hora de inicio
+        horaInicioJornada = new SimpleDateFormat("HH:mm:ss").format(new Date());
         workTimer = new Timer(1000, e -> updateComputedTime());
         workTimer.start();
     }
 
     private void stopWorkTimer() {
-        if (workTimer == null || !workTimer.isRunning()) return; // No se puede parar si no está iniciado
+        if (workTimer == null || !workTimer.isRunning()) return;
         workTimer.stop();
         accumulatedTime += System.currentTimeMillis() - startTime;
+        // Guarda la hora de fin
+        horaFinJornada = new SimpleDateFormat("HH:mm:ss").format(new Date());
         updateComputedTime(); // Actualiza una última vez
+
+        // Prepara los datos para enviar al servidor
+        String fecha = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        String horasTotales = computedTimeLabel.getText();
+
+        // Llama al método para insertar las horas en el servidor
+        boolean exito = HttpConectorSimple.insertarHoras(Menu.dnib, fecha, horaInicioJornada, horaFinJornada, horasTotales);
+
+        if (exito) {
+            JOptionPane.showMessageDialog(this, "Jornada registrada correctamente.", "Registro de Horas", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "No se pudo registrar la jornada en el servidor.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        // Reinicia el contador para la siguiente jornada
+        accumulatedTime = 0;
     }
+  
 
     private void updateComputedTime() {
         long elapsedTime = accumulatedTime;

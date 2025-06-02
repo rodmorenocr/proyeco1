@@ -1,7 +1,5 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.util.HashMap;
-import java.util.Map;
 import javax.swing.*;
 
 
@@ -18,21 +16,23 @@ public class Menu extends JFrame {
     // 3. Datos del usuario
     public static String fotoUsuario = "";
     private String nombreUsuario;
-
+    public static String dnib;
+    public static String nombreb;
+    public static String apellidob;
+    public static String puestob;
+    public static String emailb;
+    public static int telefonob;
+    public static String direccionb;
+    public static int codigoPostalb;
+    public static String ciudadb;
+    public static String provinciab;
+    public static String paisb;
     // --- CONSTRUCTOR ---
     public Menu() {
-        this.nombreUsuario = Bienvenido.nombreUsuario;
-        System.out.println("Usuario en Menú: " + nombreUsuario);
-        // Asigna la foto 
-        Map<String, String> fotoUsuarios = new HashMap<>();
-        fotoUsuarios.put("dani", "usuarios/dani/1.jpg");
-        fotoUsuarios.put("marorthat", "usuarios/marorthat/1.jpg");
-        fotoUsuarios.put("danjimfra", "usuarios/danjimfra/1.jpg");
-        fotoUsuarios.put("rodmorcru", "usuarios/rodmorcru/1.jpg");
-        fotoUsuarios.put("jospedlop", "usuarios/jospedlop/1.jpg");
-        fotoUsuarios.put("jose", "usuarios/jose/1.jpg");
-        fotoUsuarios.put("hecbarcre", "usuarios/hecbarcre/1.jpg");
-        fotoUsuario = fotoUsuarios.getOrDefault(nombreUsuario, "");
+       this.nombreUsuario = Bienvenido.nombreUsuario;
+       System.out.println("Usuario en Menú: " + nombreUsuario);
+        // Construye la URL remota 
+        fotoUsuario = "https://auraboutique.info/wp-content/themes/divi-child/usuarios/" + this.nombreUsuario + "/1.jpg";
         initComponents();
     }
 

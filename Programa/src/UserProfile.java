@@ -1,15 +1,10 @@
 import java.awt.*;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Properties;
 import javax.swing.*;
 
 public class UserProfile extends JDialog {
 
     // --- MIEMBROS DE LA CLASE ---
     private static String nombreUsuario;
-    private String propertiesFilePath;
 
     // Componentes de la UI
     private NavigationPanel navigationPanel;
@@ -21,12 +16,9 @@ public class UserProfile extends JDialog {
                       direccionPane, codigoPostalPane, ciudadPane, provinciaPane, paisPane;
 
     public UserProfile(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-        this.nombreUsuario = Bienvenido.nombreUsuario;
-        this.propertiesFilePath = "Programa/src/usuarios/" + nombreUsuario + "/datos.properties"; // CUIDADO con la ruta
-        
+        super(parent, modal);        
         initComponents();
-        loadUserData(); // Cargar los datos después de crear los componentes
+        loadUserData(); // Cargar los datos del servidor
         setLocationRelativeTo(null);
         setTitle("Datos Personales");
     }
@@ -168,44 +160,39 @@ public class UserProfile extends JDialog {
 
         return panel;
     }
-
+    // Cargar los datos del usuario desde el servidor
     private void loadUserData() {
-        Properties props = new Properties();
-        try (FileInputStream in = new FileInputStream(propertiesFilePath)) {
-            props.load(in);
-            nombrePane.setText(props.getProperty("nombre", ""));
-            apellidoPane.setText(props.getProperty("apellidos", ""));
-            emailPane.setText(props.getProperty("email", ""));
-            puestoPane.setText(props.getProperty("puesto", ""));
-            telefonoPane.setText(props.getProperty("telefono", ""));
-            direccionPane.setText(props.getProperty("direccion", ""));
-            codigoPostalPane.setText(props.getProperty("codigo_postal", ""));
-            ciudadPane.setText(props.getProperty("ciudad", ""));
-            provinciaPane.setText(props.getProperty("provincia", ""));
-            paisPane.setText(props.getProperty("pais", ""));
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "No se pudo cargar el archivo de datos del usuario.", "Error de Lectura", JOptionPane.ERROR_MESSAGE);
-        }
+        nombrePane.setText(Menu.nombreb);
+        apellidoPane.setText(Menu.apellidob);
+        emailPane.setText(Menu.emailb);
+        puestoPane.setText(Menu.puestob);
+        telefonoPane.setText(String.valueOf(Menu.telefonob));
+        direccionPane.setText(Menu.direccionb);
+        codigoPostalPane.setText(String.valueOf(Menu.codigoPostalb));
+        ciudadPane.setText(Menu.ciudadb);
+        provinciaPane.setText(Menu.provinciab);
+        paisPane.setText(Menu.paisb);
     }
+    // Guardar los datos del usuario en el servidor
+     private void saveUserData() {
+        boolean exito = HttpConectorSimple.modificaUsuario(
+                nombrePane.getText(),
+                apellidoPane.getText(),
+                emailPane.getText(),
+                puestoPane.getText(),
+                telefonoPane.getText(),
+                direccionPane.getText(),
+                codigoPostalPane.getText(),
+                ciudadPane.getText(),
+                provinciaPane.getText(),
+                paisPane.getText(),
+                Menu.dnib // DNI actual del usuario para identificarlo en el servidor
+        );
 
-    private void saveUserData() {
-        Properties props = new Properties();
-        props.setProperty("nombre", nombrePane.getText());
-        props.setProperty("apellidos", apellidoPane.getText());
-        props.setProperty("email", emailPane.getText());
-        props.setProperty("puesto", puestoPane.getText());
-        props.setProperty("telefono", telefonoPane.getText());
-        props.setProperty("direccion", direccionPane.getText());
-        props.setProperty("codigo_postal", codigoPostalPane.getText());
-        props.setProperty("ciudad", ciudadPane.getText());
-        props.setProperty("provincia", provinciaPane.getText());
-        props.setProperty("pais", paisPane.getText());
-        
-        try (FileOutputStream out = new FileOutputStream(propertiesFilePath)) {
-            props.store(out, "Datos del usuario");
+        if (exito) {
             JOptionPane.showMessageDialog(this, "Datos guardados correctamente.", "Guardado", JOptionPane.INFORMATION_MESSAGE);
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "No se pudo guardar el archivo de datos del usuario.", "Error de Escritura", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "No se pudieron guardar los cambios en el servidor.", "Error de Escritura", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

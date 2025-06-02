@@ -16,24 +16,34 @@ public class Bienvenido extends JFrame {
         usuarios.put("jose", "123");
     }
 
+    /**
+     * Constructor de la clase Bienvenido.
+     * Inicializa los componentes de la interfaz gráfica y configura la ventana.
+     */
     public Bienvenido() {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Aura Boutique - Inicio");
     }
+
+    //Metodo para conectar con el servidor y validar el usuario
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {
         String nombre = jTextFieldNombre.getText();
         String clave = new String(jTextFieldPassword.getPassword());
 
-        if (usuarios.containsKey(nombre) && usuarios.get(nombre).equals(clave)) {
-            nombreUsuario = nombre;
+        // Llama a cargarUsuario para validar las credenciales contra el servidor
+        boolean loginExitoso = HttpConectorSimple.cargarUsuario(nombre, clave);
+
+        if (loginExitoso) {
+            // Si el login es correcto, el nombre de usuario se guarda en esta variable estática
+            Bienvenido.nombreUsuario = nombre;
             Menu menuPrincipal = new Menu();
             menuPrincipal.setVisible(true);
-            this.dispose(); 
-        } else {
-            JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
+            this.dispose();// Cierra la ventana de login
+        } else {//Muestra un mensaje de error
+            JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos", "Error de Acceso", JOptionPane.ERROR_MESSAGE);
         }
-    }
+}
  
     private void initComponents() {
 
@@ -160,6 +170,7 @@ public class Bienvenido extends JFrame {
         pack();
     }                       
 
+    
     private void jButtonSALIRActionPerformed(java.awt.event.ActionEvent evt) {
         System.exit(0);
     }
