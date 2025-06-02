@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.io.InputStream;
 import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -17,7 +18,9 @@ public class Nominas extends JDialog {
     private JLabel headerLabel;
     private JLabel imageLabel;
     private JTree jTree1;
+    private String urlNominaActualParaDescarga = "";
 
+    // --- CONSTRUCTOR ---
     public Nominas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.nombreUsuario = Bienvenido.nombreUsuario;
@@ -25,7 +28,10 @@ public class Nominas extends JDialog {
         setLocationRelativeTo(null);
         setTitle("Nóminas");
     }
-
+    /**
+     * Método para conectar con el servidor y validar el usuario.
+     * Este método se invoca al seleccionar una nómina en el árbol.
+     */
     private void initComponents() {
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new BorderLayout()); // Layout principal
@@ -110,7 +116,6 @@ public class Nominas extends JDialog {
 
    private void jTree1ValueChanged(javax.swing.event.TreeSelectionEvent evt) {
     DefaultMutableTreeNode node = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
-
     // Si no es un nodo hoja (un mes), no hacer nada
     if (node == null || !node.isLeaf()) {
         imageLabel.setIcon(null);
@@ -121,66 +126,76 @@ public class Nominas extends JDialog {
     // Obtenemos los datos del nodo padre (el mes) y el abuelo (el año)
     DefaultMutableTreeNode parentNode = (DefaultMutableTreeNode) node.getParent();
     String textoMes = parentNode.toString(); // Ej: "Nómina Diciembre"
-    
-    // Extraemos el mes y el año (esto depende de cómo construyes el árbol)
-    // Asumiremos la estructura estática que tienes ahora
+    //----Configuracio mes/año----
     int mes = 0;
-    int anio = 2024; // Asumimos 2024, ajústalo si es necesario
+    int anio = 2024; 
 
     if (textoMes.contains("Diciembre")) mes = 12;
     else if (textoMes.contains("Noviembre")) mes = 11;
     else if (textoMes.contains("Octubre")) mes = 10;
-    // Añade más meses si los tienes en tu árbol estático
+   
     
     if (mes == 0) return; // Mes no reconocido
 
     try {
         // Construimos la URL a nuestro NUEVO script file_server.php
         String urlString = String.format(
-            "https://auraboutique.info/wp-content/themes/divi-child/file_server.php?dni=%s&mes=%d&anio=%d",
+            "https://auraboutique.info/wp-content/themes/divi-child/file_server.php?type=nomina&dni=%s&mes=%d&anio=%d",
             Menu.dnib, // El DNI del usuario logueado
             mes,
             anio
         );
-
-        URL urlDelServidorDeArchivos = new URL(urlString);
-
-        // ImageIO lee la imagen directamente del stream que le envía el PHP
+        System.out.println("NOMINAS: URL construida para la nómina: " + urlString); // Línea de depuración pulsarla para abril en navegador la imagen
+        URL urlDelServidorDeArchivos = new URL(urlString);// ImageIO lee la imagen directamente del stream que le envía el PHP
         Image imagen = ImageIO.read(urlDelServidorDeArchivos);
-
+        urlNominaActualParaDescarga = urlString;
         if (imagen != null) {
             imageLabel.setText("");
             imageLabel.setIcon(new ImageIcon(imagen));
         } else {
              imageLabel.setIcon(null);
              imageLabel.setText("Error: archivo recibido no es una imagen válida.");
+             urlNominaActualParaDescarga = "";
         }
 
     } catch (Exception e) {
         imageLabel.setIcon(null);
         imageLabel.setText("No se pudo cargar la imagen.");
         System.err.println("Error al cargar imagen desde el file_server: " + e.getMessage());
+        urlNominaActualParaDescarga = "";
         e.printStackTrace();
-    }
-    
+    }   
     // El revalidate/repaint sigue siendo una buena práctica
     contentPanel.revalidate();
     contentPanel.repaint();
 }
+ // En Nominas.java
     private void downloadButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        if (arbol_seleccionado == 0 || imageLabel.getIcon() == null) {
+        if (urlNominaActualParaDescarga == null || urlNominaActualParaDescarga.isEmpty()) {
             JOptionPane.showMessageDialog(this, "No hay ninguna nómina seleccionada para la descarga.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        try {
+            String nombreArchivoSugerido = "nomina_descargada.png"; 
+            URL urlParaDescargar = new URL(urlNominaActualParaDescarga);
+            InputStream in = urlParaDescargar.openStream();
 
-        String fileName = "";
-        switch (arbol_seleccionado) {
-            case 1 -> fileName = "nomina_diciembre.png";
-            case 2 -> fileName = "nomina_octubre.png";
-            case 3 -> fileName = "nomina_noviembre.png";
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setSelectedFile(new java.io.File(nombreArchivoSugerido));
+            int userSelection = fileChooser.showSaveDialog(this);
+
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                java.io.File fileToSave = fileChooser.getSelectedFile();
+                java.nio.file.Files.copy(in, fileToSave.toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+                in.close();
+                JOptionPane.showMessageDialog(this, "Nómina descargada correctamente en:\n" + fileToSave.getAbsolutePath(), "Descarga Completa", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                in.close(); // Asegúrate de cerrar el stream si el usuario cancela
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al intentar descargar la nómina:\n" + e.getMessage(), "Error de Descarga", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
         }
-
-        // Lógica para guardar la imagen (simplificada)
-        JOptionPane.showMessageDialog(this, "Nómina '" + fileName + "' descargada en el escritorio.", "Descarga Completa", JOptionPane.INFORMATION_MESSAGE);
     }
 }

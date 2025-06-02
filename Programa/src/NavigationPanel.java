@@ -50,7 +50,7 @@ public class NavigationPanel extends JPanel {
                 "https://auraboutique.info/wp-content/themes/divi-child/file_server.php?type=profile&user=%s",
                 Bienvenido.nombreUsuario // Usamos el nombre de usuario para identificar la carpeta
             );
-
+            System.out.println("NAVIGATION_PANEL: URL construida para la foto de perfil: " + urlString);
             URL urlDelServidorDeArchivos = new URL(urlString);
 
             // ImageIO lee la imagen directamente del stream que le envía el PHP
