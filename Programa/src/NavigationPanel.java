@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.net.URL;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class NavigationPanel extends JPanel {
@@ -39,9 +41,36 @@ public class NavigationPanel extends JPanel {
         jButtonNoticias = new JButton();
         jTextFieldBusqueda = new JTextField();
 
-        // --- Configuración del Icono de Usuario ---
+                  
+        // --- Configuración del Icono de Usuario (VERSIÓN FINAL) ---
         jLabelUserIcon.setHorizontalAlignment(SwingConstants.CENTER);
-        jLabelUserIcon.setIcon(new ImageIcon(getClass().getResource("/images/user.png"))); // Asegúrate que la ruta es correcta
+        try {
+            // Construimos la URL que apunta a nuestro script pidiendo la foto de perfil
+            String urlString = String.format(
+                "https://auraboutique.info/wp-content/themes/divi-child/file_server.php?type=profile&user=%s",
+                Bienvenido.nombreUsuario // Usamos el nombre de usuario para identificar la carpeta
+            );
+
+            URL urlDelServidorDeArchivos = new URL(urlString);
+
+            // ImageIO lee la imagen directamente del stream que le envía el PHP
+            Image imagen = ImageIO.read(urlDelServidorDeArchivos);
+
+            if (imagen != null) {
+                Image imagenEscalada = imagen.getScaledInstance(64, 64, Image.SCALE_SMOOTH);
+                jLabelUserIcon.setIcon(new ImageIcon(imagenEscalada));
+            } else {
+                // Esto se ejecutará si el script devuelve algo que no es una imagen
+                throw new Exception("El script devolvió un stream nulo, no una imagen.");
+            }
+
+        } catch (Exception e) {
+            // Si algo falla, ponemos el icono por defecto como plan B
+            System.err.println("No se pudo cargar la foto de perfil. Usando icono por defecto.");
+            e.printStackTrace();
+            jLabelUserIcon.setIcon(new ImageIcon(getClass().getResource("/images/user.png")));
+        }
+        
 
         // --- Configuración del Campo "Inicio" ---
         jTextFieldInicio.setBackground(new Color(38, 38, 38));

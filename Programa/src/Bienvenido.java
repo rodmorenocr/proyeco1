@@ -1,20 +1,7 @@
 import javax.swing.*;
-import java.util.HashMap;
 
 public class Bienvenido extends JFrame {
-
-    private static final HashMap<String, String> usuarios = new HashMap<>();
     public static String nombreUsuario;
-
-    static {
-        usuarios.put("danjimfra", "Verde1");
-        usuarios.put("marorthat", "Verde1");
-        usuarios.put("rodmorcru", "Verde1");
-        usuarios.put("jospedlop", "Verde1");
-        usuarios.put("hecbarcre", "Verde1");
-        usuarios.put("dani", "123");
-        usuarios.put("jose", "123");
-    }
 
     /**
      * Constructor de la clase Bienvenido.
@@ -30,6 +17,7 @@ public class Bienvenido extends JFrame {
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {
         String nombre = jTextFieldNombre.getText();
         String clave = new String(jTextFieldPassword.getPassword());
+        
 
         // Llama a cargarUsuario para validar las credenciales contra el servidor
         boolean loginExitoso = HttpConectorSimple.cargarUsuario(nombre, clave);
